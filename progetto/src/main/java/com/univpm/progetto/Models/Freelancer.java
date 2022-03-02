@@ -286,6 +286,7 @@ public class Freelancer {
     @Override
     public String toString(){
         // non sono sicuro che la formattazione sia questa ma al massimo si sistema abbastanza facilmente.
+    	//this.? \n?
         return "freelancer{"+
             "categories2"+ categories2 + '\'' +
             ", country"+ country + '\'' +
