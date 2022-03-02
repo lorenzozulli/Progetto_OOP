@@ -5,7 +5,7 @@ import java.util.HashMap;
 
 
 public class Search {
-    @GetMapping(/search/)
+    @GetMapping("/search/")
     public void searcher(){
         Search freelancers = new Search(client);
         HashMap<String, String> params = new HashMap<String, String>();

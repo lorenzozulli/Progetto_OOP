@@ -279,5 +279,30 @@ public class Freelancer {
     public void setTitle(String title) {
         this.title = title;
     }
+    /**
+     * Metodo toString classico
+     * @return 
+     */
+    @Override
+    public String toString(){
+        // non sono sicuro che la formattazione sia questa ma al massimo si sistema abbastanza facilmente.
+        return "freelancer{"+
+            "categories2"+ categories2 + '\'' +
+            ", country"+ country + '\'' +
+            ", description"+ description + '\'' +
+            ", feedback"+ feedback + '\'' +
+            ", id"+ id + '\'' +
+            ", last_activity"+ last_activity + '\'' +
+            ", member_since"+ member_since + '\'' +
+            ", name"+ name + '\'' +
+            ", portfolio_items_count"+ portfolio_items_count + '\'' +
+            ", portrait_50"+ portrait_50 + '\'' +
+            ", profile_type"+ profile_type + '\'' +
+            ", rate"+ rate + '\'' +
+            ", skills"+ skills + '\'' +
+            ", test_passed_count"+ test_passed_count + '\'' +
+            ", title"+ title + '\'' +
+            "}";
+    }
 
 }
