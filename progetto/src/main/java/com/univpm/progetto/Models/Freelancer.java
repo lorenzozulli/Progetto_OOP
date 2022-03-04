@@ -72,6 +72,26 @@ public class Freelancer {
         this.title = title;       
     }
     
+    @overloading
+    Freelancer(){}
+    
+    public void copia(Freelancer daCopiare) {
+    	this.categories2 = daCopiare.getCategories2;
+        this.country = daCopiare.getCountry;
+        this.description = daCopiare.getDescription;
+        this.feedback = daCopiare.getFeedback;
+        this.id = daCopiare.getId;
+        this.last_activity = daCopiare.getLast_activity;
+        this.member_since = daCopiare.getMember_since;
+        this.name = daCopiare.getName;
+        this.portfolio_items_count = daCopiare.getPortfolio_items_count;
+        this.portrait_50 = daCopiare.getPortrait_50;
+        this.profile_type = daCopiare.getProfile_type;
+        this.rate = daCopiare.getRate;
+        this.skills = daCopiare.getSkills;
+        this.test_passed_count = daCopiare.getTest_passed_count;
+        this.title = daCopiare.getTitle;       
+    }
 
     /**
      * @return Ritorna le "categories2"
