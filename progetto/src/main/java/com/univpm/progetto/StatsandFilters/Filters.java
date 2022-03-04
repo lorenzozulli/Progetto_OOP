@@ -1,5 +1,6 @@
 package com.univpm.progetto.StatsandFilters;
 
+import java.util.Vector;
 /**
  * Classe che ci permette di accedere ai filtri 
  * @author Lorenzo Zulli, Giovanni Prati
@@ -16,7 +17,7 @@ public class Filters {
 		long pivotValue = users.get(pivotIndex).getFeedback();
 		swap(users,pivotIndex,highIndex);
 		
-		int leftPointer = partizionamento(users,lowIndex,highIndex,pivotValue);
+		int leftPointer = partizionamentoPerFeedback(users,lowIndex,highIndex,pivotValue);
 		
 	    ordinoPerFeedback(users,lowIndex,leftPointer - 1);
 	    ordinoPerFeedback(users,leftPointer + 1,highIndex);
@@ -27,7 +28,24 @@ public class Filters {
 		ordinoPerFeedback(users,0,users.size()-1);
 	}
 	
-	public int partizionamento(Vector<Freelancer> users,int lowIndex,int highIndex,long pivotValue) {
+	public void ordinoPerDimensionePortfolio(Vector<Freelancer> users,int lowIndex,int highIndex) {
+		if (lowIndex >= highIndex) return; //se abbiamo a che fare con un vettore unitario o abbiamo terminato
+		int pivotIndex = highindex/2;
+		int pivotValue = users.get(pivotIndex).getPortfolio_items_count();
+		swap(users,pivotIndex,highIndex);
+		
+		int leftPointer = partizionamentoPerDimensionePortfolio(users,lowIndex,highIndex,pivotValue);
+		
+		ordinoPerDimensionePortfolio(users,lowIndex,leftPointer - 1);
+		ordinoPerDimensionePortfolio(users,leftPointer + 1,highIndex);
+	}
+	
+	@overloading
+	public void ordinoPerDimensionePortfolio(Vector<Freelancer> users) {
+		ordinoPerDimensionePortfolio(users,0,users.size()-1);
+	}
+	
+	public int partizionamentoPerFeedback(Vector<Freelancer> users,int lowIndex,int highIndex,long pivotValue) {
         int leftPointer = lowIndex;
         int rightPointer = highIndex - 1;
         while (leftPointer < rightPointer) {
@@ -45,6 +63,32 @@ public class Filters {
 	      }
         //controllo l'ultimo valore
         if(users.get(leftPointer).getFeedback()> users.get(highIndex).getFeedback()) {
+            swap(users,leftPointer,highIndex);
+          }
+          else {
+            leftPointer = highIndex;
+          }
+          return leftPointer;		
+    }
+	
+	public int partizionamentoPerDimensionePortfolio(Vector<Freelancer> users,int lowIndex,int highIndex,int pivotValue) {
+        int leftPointer = lowIndex;
+        int rightPointer = highIndex - 1;
+        while (leftPointer < rightPointer) {
+
+	        // vado avanti da sinistra fino a quando non trovo un valore di feedback più grande del pivotValue o arrivo al rightPointer
+	        while (users.get(leftPointer).getPortfolio_items_count() <= pivotValue && leftPointer < rightPointer) {
+	          leftPointer++;
+	        }
+	        // vado avanti da destra fino a quando non trovo un valore di feedback più piccolo del pivotValue o arrivo al leftPointer
+	        while (users.get(rightPointer).getPortfolio_items_count() >= pivotValue && leftPointer < rightPointer) {
+	          rightPointer--;
+	        }
+
+	        swap(users, leftPointer, rightPointer);
+	      }
+        //controllo l'ultimo valore
+        if(users.get(leftPointer).getPortfolio_items_count()> users.get(highIndex).getPortfolio_items_count()) {
             swap(users,leftPointer,highIndex);
           }
           else {
