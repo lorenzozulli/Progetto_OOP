@@ -1,9 +1,9 @@
 package com.univpm.progetto.Utilities;
+
 /**
  * Classe per prendere la api key
- * @author Lorenzo Zulli e Giovanni Prati
+ * @author Lorenzo Zulli, Giovanni Prati
  */
-
 public class Parser {
     private String api_key;
 

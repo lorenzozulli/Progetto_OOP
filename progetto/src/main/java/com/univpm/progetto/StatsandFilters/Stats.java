@@ -2,6 +2,11 @@ package com.univpm.progetto.StatsandFilters;
 
 import com.univpm.progetto.Models.Freelancer;
 
+/**
+ * Classe per ottenere le statistiche legate agli utenti
+ * @author Lorenzo Zulli, Giovanni Prati
+ */
+
 public class Stats {
     /**
      * Metodo per ottenere la media di progetti nel portfolio degli utenti con la skill "Java"

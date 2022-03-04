@@ -3,21 +3,7 @@ package com.univpm.progetto.Models;
 import java.time.LocalDate;
 /**
  * Classe che modella in modo generale il Freelancer
- * @param categories2
- * @param country Nazionalità
- * @param description Descrizione del suo profilo
- * @param feedback 
- * @param id
- * @param last_activity Data della sua ultima attività
- * @param member_since Data di iscrizione al sito
- * @param name Il suo nome
- * @param portfolio_items_count Numero di oggetti nel suo portfolio
- * @param portrait_50
- * @param profile_type Indica il tipo di profilo
- * @param rate
- * @param skills Array con all'interno la lista delle sue skills
- * @param test_passed_count
- * @param title
+ * @author Lorenzo Zulli, Giovanni Prati
  */
 
 public class Freelancer {
@@ -36,7 +22,24 @@ public class Freelancer {
     private String[] skills;
     private int test_passed_count;
     private String title;
-
+    /**
+     * Costruttore del Freelancer
+     * @param categories2 Elenco delle categorie (JSON array)
+     * @param country Nazionalità
+     * @param description Descrizione
+     * @param feedback Numero per indicare il feedback
+     * @param id Codice identificativo
+     * @param last_activity Data dell' ultima attività
+     * @param member_since Data di iscrizione ad Upwork
+     * @param name Il suo nome
+     * @param portfolio_items_count Numero di oggetti nel portfolio
+     * @param portrait_50
+     * @param profile_type Indica il tipo di profilo (Agency, Independent)
+     * @param rate Numero usato per filtrare le ricerche dal profilo (//da chiarire un attimo)
+     * @param skills Elenco delle skills (JSON array)
+     * @param test_passed_count Numero di test passati 
+     * @param title Titolo del profilo del freelancer
+     */
     Freelancer(String[] categories2,
                 String country,
                 String description,

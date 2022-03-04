@@ -14,7 +14,7 @@
 	<name>progetto</name>
 	<description>Progetto OOP di Lorenzo Zulli e Giovanni Prati</description>
 	<properties>
-		<java.version>11</java.version>
+		<java.version>17</java.version>
 	</properties>
 	<dependencies>
 		<dependency>
