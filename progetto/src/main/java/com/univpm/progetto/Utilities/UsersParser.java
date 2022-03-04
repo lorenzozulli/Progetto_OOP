@@ -17,6 +17,15 @@ public class UsersParser extends Parser {
         params.put("q", "Java");
 
         freelancers.find(params);
+        
+        /**
+         * Metodo per la richesta degli utenti
+         * @return
+         */
+        public Vector<Freelancer> usersRequest(){
+
+        }
+
         /**
          * Metodo per generare l'URL desiderato
          * @return
