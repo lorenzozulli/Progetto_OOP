@@ -306,7 +306,7 @@ public class Freelancer {
             ", skills"+ skills + '\'' +
             ", test_passed_count"+ test_passed_count + '\'' +
             ", title"+ title + '\'' +
-            "}";
+            "},";
     }
 
 }

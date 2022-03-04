@@ -25,7 +25,7 @@ public class Filters {
 	    }		
 	}
 	/**
-	 * 
+	 * Classe per scambiare due Freelancers
 	 * @param users
 	 * @param index1
 	 * @param index2
