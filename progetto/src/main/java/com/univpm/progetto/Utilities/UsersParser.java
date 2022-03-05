@@ -29,7 +29,7 @@ public class UsersParser extends Parser {
          */
         public void usersRequest(){
             HttpClient client = HttpClient.newHttpClient();
-            HttpRequest request = HttpRequest.newBuilder().uri(URI.create("//inserire il link di upwork")).build();
+            HttpRequest request = HttpRequest.newBuilder().uri(URI.create(this.URLGenerator())).build();
             client.sendAsync(request, HttpResponse.BodyHandlers.ofString())
                     .thenApply(HttpResponse::body)
                     .thenAccept(System.out::println)
@@ -41,8 +41,9 @@ public class UsersParser extends Parser {
          * @return
          */
         public String URLGenerator(){
-            String URL = "https://api.upwork.com";
-            //da inserire tutto il resto dell'URL
+            String URL = "https://api.upwork.com"; // da verificare la correttezza
+            URL += ("&appid=" + super.getApi_key());
+            // inserire tutto il resto del URL
         }
     
 }
