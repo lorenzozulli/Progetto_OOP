@@ -8,7 +8,7 @@ import java.util.Vector;
 
 public class Filters {
     /**
-	 * Algoritmo che prendere il vettore di users con la skill Java e li ordina, attraverso un quicksort per feedback minimo
+	 * Metodo per ordinare gli users con la skill Java per feedback in ordine crescente (quicksort)
 	 * @param users
 	 */
 	public void ordinoPerFeedback(Vector<Freelancer> users,int lowIndex,int highIndex) {
@@ -27,7 +27,12 @@ public class Filters {
 	public void ordinoPerFeedback(Vector<Freelancer> users) {
 		ordinoPerFeedback(users,0,users.size()-1);
 	}
-	
+	/**
+	 * Metodo per ordinare gli userso con la skill Java per dimensione del portfolio in ordine crescente (quicksort)
+	 * @param users
+	 * @param lowIndex
+	 * @param highIndex
+	 */
 	public void ordinoPerDimensionePortfolio(Vector<Freelancer> users,int lowIndex,int highIndex) {
 		if (lowIndex >= highIndex) return; //se abbiamo a che fare con un vettore unitario o abbiamo terminato
 		int pivotIndex = highindex/2;
@@ -50,11 +55,11 @@ public class Filters {
         int rightPointer = highIndex - 1;
         while (leftPointer < rightPointer) {
 
-	        // vado avanti da sinistra fino a quando non trovo un valore di feedback più grande del pivotValue o arrivo al rightPointer
+	        // vado avanti da sinistra fino a quando non trovo un valore di feedback piï¿½ grande del pivotValue o arrivo al rightPointer
 	        while (users.get(leftPointer).getFeedback() <= pivotValue && leftPointer < rightPointer) {
 	          leftPointer++;
 	        }
-	        // vado avanti da destra fino a quando non trovo un valore di feedback più piccolo del pivotValue o arrivo al leftPointer
+	        // vado avanti da destra fino a quando non trovo un valore di feedback piï¿½ piccolo del pivotValue o arrivo al leftPointer
 	        while (users.get(rightPointer).getFeedback() >= pivotValue && leftPointer < rightPointer) {
 	          rightPointer--;
 	        }
@@ -76,11 +81,11 @@ public class Filters {
         int rightPointer = highIndex - 1;
         while (leftPointer < rightPointer) {
 
-	        // vado avanti da sinistra fino a quando non trovo un valore di feedback più grande del pivotValue o arrivo al rightPointer
+	        // vado avanti da sinistra fino a quando non trovo un valore di feedback piï¿½ grande del pivotValue o arrivo al rightPointer
 	        while (users.get(leftPointer).getPortfolio_items_count() <= pivotValue && leftPointer < rightPointer) {
 	          leftPointer++;
 	        }
-	        // vado avanti da destra fino a quando non trovo un valore di feedback più piccolo del pivotValue o arrivo al leftPointer
+	        // vado avanti da destra fino a quando non trovo un valore di feedback piï¿½ piccolo del pivotValue o arrivo al leftPointer
 	        while (users.get(rightPointer).getPortfolio_items_count() >= pivotValue && leftPointer < rightPointer) {
 	          rightPointer--;
 	        }
@@ -97,7 +102,7 @@ public class Filters {
           return leftPointer;		
     }
 	/**
-	 * Classe per scambiare due Freelancers
+	 * Metodo per scambiare due Freelancers
 	 * @param users
 	 * @param index1
 	 * @param index2
