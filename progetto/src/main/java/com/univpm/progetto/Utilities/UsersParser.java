@@ -59,7 +59,7 @@ public class UsersParser extends Parser {
          * @return
          */
         public String URLGenerator(){
-            String URL = "https://api.upwork.com"; // da verificare la correttezza
+            String URL = "https://upwork.com/api"; // entry point della documentazione
             URL += ("&appid=" + super.getApi_key());
             // inserire tutto il resto del URL
         }
