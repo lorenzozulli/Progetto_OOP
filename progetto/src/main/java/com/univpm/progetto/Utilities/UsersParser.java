@@ -20,11 +20,11 @@ public class UsersParser extends Parser {
             super(api_key);
         }
         // pezzo di codice preso direttamente da Upwork, vediamo cosa dobbiamo farci
-        Search freelancers = new Search(client);
+        /*Search freelancers = new Search(client);
         HashMap<String, String> params = new HashMap<String, String>();
         params.put("q", "Java");
 
-        freelancers.find(params);
+        freelancers.find(params);*/
         
         /**
          * Metodo per la richesta degli utenti
