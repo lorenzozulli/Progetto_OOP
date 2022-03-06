@@ -1,5 +1,8 @@
 package com.univpm.progetto.Utilities;
 import com.Upwork.api.Routers.Freelancers.Search;
+
+import org.json.JSONArray;
+import org.json.JSONObject;
 import org.springframework.web.bind.annotation.GetMapping;
 
 import java.net.http.HttpClient;
@@ -32,8 +35,23 @@ public class UsersParser extends Parser {
             HttpRequest request = HttpRequest.newBuilder().uri(URI.create(this.URLGenerator())).build();
             client.sendAsync(request, HttpResponse.BodyHandlers.ofString())
                     .thenApply(HttpResponse::body)
-                    .thenAccept(System.out::println)
+                    .thenApply(UsersParser::parser)
                     .join();
+        }
+        /**
+         * Metodo per fare il parsing degli utenti con la skill java per poi farci le vere e proprie operazioni
+         * @param responsebody
+         * @return 
+         */
+        public static String parser(String responsebody){
+            JSONArray albums = new JSONArray(responsebody);
+            for(int i=0; i< /*dimensione*/; i++){
+                JSONObject album = albums.getJSONObject(i); //da metterci quello nostro di Upwork mi raccomando
+                double feedback = album.getDouble("feedback");
+                int portfolio_items_count = album.getInt("portfolio_items_count");
+                //inserire parte per le skill           
+            }
+            return null;
         }
 
         /**
