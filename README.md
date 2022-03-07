@@ -52,18 +52,62 @@ Tramite questa rotta andiamo a generare le seguenti statistiche:
   
 Esempio di risultato:
 ```json
-//JSON here
+{
+   "average portfolio_items_count": "3.44543456567",
+   "variance portfolio_items_count": "4.342345665657",
+   "average skills": "2.4343566",
+   "variance skills": "3.5546656767",
+}
 ```
 
 ## /filters
-Tramite questa rotta andiamo a generare i seguenti filtri:
-* feedback in ordine crescente (**feedback**)
-* dimensione portfolio in ordine crescente (**portfolio_items_count**)
-
-Esempio di risultato: 
+Tramite questa rotta andiamo a generare i seguenti filtri attraverso le seguenti keywords:
+* **/feedback**: feedback in ordine crescente<br> 
+   Esempio di risultato: 
 ```json
-//JSON here
+[
+   {
+      "...ohter things about the user..."
+      "feedback": "1.6655474896789",
+      "...ohter things about the user..."
+   },
+   {
+      "...ohter things about the user..."
+      "feedback": "2.56785904954805",
+      "...ohter things about the user..."
+   },
+   {
+      "...ohter things about the user..."
+      "feedback": "3.56787346023946",
+      "...ohter things about the user..."
+   },
+   "..."
+]
 ```
+* **/portfolio**: dimensione portfolio in ordine crescente<br>
+   Esempio di risultato: 
+```json
+[
+   {
+      "...ohter things about the user..."
+      "portfolio_items_count": "1",
+      "...ohter things about the user..."
+   },
+   {
+      "...ohter things about the user..."
+      "portfolio_items_count": "2",
+      "...ohter things about the user..."
+   },
+   {
+      "...ohter things about the user..."
+      "portfolio_items_count": "3",
+      "...ohter things about the user..."
+   },
+   "..."
+]
+```
+
+
 
 # Software utilizzati
 * [Eclipse](https://www.eclipse.org/downloads/) - Ambiente di sviluppo (Giovanni Prati).
