@@ -13,7 +13,7 @@ public class Filters {
 	 */
 	public void ordinoPerFeedback(Vector<Freelancer> users,int lowIndex,int highIndex) {
 		if (lowIndex >= highIndex) return; //se abbiamo a che fare con un vettore unitario o abbiamo terminato
-		int pivotIndex = highindex/2;
+		int pivotIndex = highIndex/2;
 		long pivotValue = users.get(pivotIndex).getFeedback();
 		swap(users,pivotIndex,highIndex);
 		
@@ -23,7 +23,7 @@ public class Filters {
 	    ordinoPerFeedback(users,leftPointer + 1,highIndex);
     }
 	
-	@overloading
+	@Overloading
 	public void ordinoPerFeedback(Vector<Freelancer> users) {
 		ordinoPerFeedback(users,0,users.size()-1);
 	}
@@ -35,7 +35,7 @@ public class Filters {
 	 */
 	public void ordinoPerDimensionePortfolio(Vector<Freelancer> users,int lowIndex,int highIndex) {
 		if (lowIndex >= highIndex) return; //se abbiamo a che fare con un vettore unitario o abbiamo terminato
-		int pivotIndex = highindex/2;
+		int pivotIndex = highIndex/2;
 		int pivotValue = users.get(pivotIndex).getPortfolio_items_count();
 		swap(users,pivotIndex,highIndex);
 		
@@ -45,7 +45,7 @@ public class Filters {
 		ordinoPerDimensionePortfolio(users,leftPointer + 1,highIndex);
 	}
 	
-	@overloading
+	@OverLoading
 	public void ordinoPerDimensionePortfolio(Vector<Freelancer> users) {
 		ordinoPerDimensionePortfolio(users,0,users.size()-1);
 	}
