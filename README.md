@@ -106,8 +106,8 @@ Tramite questa rotta andiamo a generare i seguenti filtri attraverso le seguenti
    "..."
 ]
 ```
-
-
+# Javadoc
+Attraverso i commenti "Javadoc" siamo riusciti a creare una documentazione dettagliata di tutte le classi e di diversi metodi, di seguito il link: [javadoc del progetto](https://www.youtube.com/watch?v=dQw4w9WgXcQ)
 
 # Software utilizzati
 * [Eclipse](https://www.eclipse.org/downloads/) - Ambiente di sviluppo (Giovanni Prati).

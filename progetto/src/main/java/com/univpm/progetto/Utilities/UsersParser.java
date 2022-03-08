@@ -43,12 +43,12 @@ public class UsersParser extends Parser {
          * @return null
          */
         public static String parser(String responsebody){
-            JSONArray users = new JSONArray(responsebody);
-            for(int i=0; i< users.length(); i++){
-                JSONObject user = users.getJSONObject(i);
-                double feedback = user.getDouble("feedback");
-                int portfolio_items_count = user.getInt("portfolio_items_count");
-                JSONArray skills_array = user.getJSONArray("skills");
+            JSONArray freelancers = new JSONArray(responsebody);
+            for(int i=0; i< freelancers.length(); i++){
+                JSONObject freelancer = freelancers.getJSONObject(i);
+                double feedback = freelancer.getDouble("feedback");
+                int portfolio_items_count = freelancer.getInt("portfolio_items_count");
+                JSONArray skills_array = freelancer.getJSONArray("skills");
                 int skills_count = skills_array.length(); 
                 System.out.println(feedback +" "+ portfolio_items_count +" "+ skills_count);        
             }

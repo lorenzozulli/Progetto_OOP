@@ -18,7 +18,7 @@ public class UpworkController {
     /**
      * Rotta per avviare la ricerca degli utenti con la skill Java
      */
-    @PostMapping(value = "/search")
+    @PostMapping(value = "/searchjava")
     public JSONArray startSearch(@RequestBody JSONObject body){
         //inserire il codice
         return upworkservice.startSearch();
