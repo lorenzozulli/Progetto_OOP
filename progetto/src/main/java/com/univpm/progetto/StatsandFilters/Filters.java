@@ -13,7 +13,7 @@ public class Filters {
 	 * Metodo per ordinare gli users con la skill Java per feedback in ordine crescente (quicksort)
 	 * @param users
 	 */
-	public JSONArray ordinoPerFeedback(Vector<Freelancer> users,int lowIndex,int highIndex) {
+	public JSONArray ordinoPerFeedback(JSONArray users,int lowIndex,int highIndex) {
 		if (lowIndex >= highIndex) return null; //se abbiamo a che fare con un vettore unitario o abbiamo terminato
 		int pivotIndex = highIndex/2;
 		long pivotValue = users.get(pivotIndex).getFeedback();
@@ -26,8 +26,8 @@ public class Filters {
     }
 	
 	@Overloading
-	public void ordinoPerFeedback(Vector<Freelancer> users) {
-		ordinoPerFeedback(users,0,users.size()-1);
+	public void ordinoPerFeedback(JSONArray users) {
+		ordinoPerFeedback(users,0,users.length()-1);
 	}
 	/**
 	 * Metodo per ordinare gli userso con la skill Java per dimensione del portfolio in ordine crescente (quicksort)

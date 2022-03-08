@@ -1,5 +1,7 @@
 package com.univpm.progetto.Services;
 
+import com.univpm.progetto.StatsandFilters.Filters;
+
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -8,7 +10,7 @@ import org.json.JSONObject;
  * @author Lorenzo Zulli, Giovanni Prati
  */
 
-public class UpworkService {
+public class UpworkService extends Filters {
     /**
      * Metodo per avviare una ricerca
      * @return search
@@ -38,7 +40,7 @@ public class UpworkService {
      */
     public JSONArray feedbackFilterGenerator(){
         JSONArray filters = new JSONArray();
-        filters.ordinoPerFeedback();
+        ordinoPerFeedback(filters);
         return filters;
     }
     public JSONArray portfolioFilterGenerator(){
