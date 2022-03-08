@@ -1,15 +1,14 @@
 package com.univpm.progetto.Utilities;
-import com.Upwork.api.Routers.Freelancers.Search;
+//import com.Upwork.api.Routers.Freelancers.Search;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
-import org.springframework.web.bind.annotation.GetMapping;
 
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 import java.net.URI;
-import java.util.HashMap;
+//import java.util.HashMap;
 
 /**
  * Classe per cercare gli users con la skill Java
@@ -41,15 +40,17 @@ public class UsersParser extends Parser {
         /**
          * Metodo per fare il parsing degli utenti con la skill java per poi farci le vere e proprie operazioni
          * @param responsebody
-         * @return 
+         * @return null
          */
         public static String parser(String responsebody){
-            JSONArray albums = new JSONArray(responsebody);
-            for(int i=0; i< /*dimensione*/; i++){
-                JSONObject album = albums.getJSONObject(i); //da metterci quello nostro di Upwork mi raccomando
-                double feedback = album.getDouble("feedback");
-                int portfolio_items_count = album.getInt("portfolio_items_count");
-                //inserire parte per le skill           
+            JSONArray users = new JSONArray(responsebody);
+            for(int i=0; i< users.length(); i++){
+                JSONObject user = users.getJSONObject(i);
+                double feedback = user.getDouble("feedback");
+                int portfolio_items_count = user.getInt("portfolio_items_count");
+                JSONArray skills_array = user.getJSONArray("skills");
+                int skills_count = skills_array.length(); 
+                System.out.println(feedback +" "+ portfolio_items_count +" "+ skills_count);        
             }
             return null;
         }
@@ -62,6 +63,7 @@ public class UsersParser extends Parser {
             String URL = "https://upwork.com/api"; // entry point della documentazione
             URL += ("&appid=" + super.getApi_key());
             // inserire tutto il resto del URL
+            return URL;
         }
     
 }
