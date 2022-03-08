@@ -20,7 +20,7 @@ public class Freelancer {
     private int portfolio_items_count;
     private String portrait_50;
     private String profile_type;
-    private int rate;
+    private float rate;
     private String[] skills;
     private int test_passed_count;
     private String title;
@@ -53,7 +53,7 @@ public class Freelancer {
                 int portfolio_items_count,
                 String portrait_50,
                 String profile_type,
-                int rate,
+                float rate,
                 String[] skills,
                 int test_passed_count,
                 String title){
@@ -259,7 +259,7 @@ public class Freelancer {
     /**
      * @return int return the rate
      */
-    public int getRate() {
+    public float getRate() {
         return rate;
     }
 
