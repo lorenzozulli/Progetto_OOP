@@ -3,6 +3,7 @@ package com.univpm.progetto.Controller;
 import com.univpm.progetto.Services.UpworkService;
 
 import org.json.JSONObject;
+import org.json.JSONArray;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -18,7 +19,7 @@ public class UpworkController {
      * Rotta per avviare la ricerca degli utenti con la skill Java
      */
     @PostMapping(value = "/search")
-    public JSONObject startSearch(@RequestBody JSONObject body){
+    public JSONArray startSearch(@RequestBody JSONObject body){
         //inserire il codice
         return upworkservice.startSearch();
     }
@@ -33,9 +34,14 @@ public class UpworkController {
     /**
      * Rotta per generare i filters
      */
-    @PostMapping(value = "/filters")
-    public JSONObject filters(@RequestBody JSONObject body){
+    @PostMapping(value = "/filters/feedback")
+    public JSONArray feedbackFilter(@RequestBody JSONObject body){
         //inserire il codice
-        return upworkservice.filtersGenerator();
+        return upworkservice.feedbackFilterGenerator();
+    }
+    @PostMapping(value = "/filters/portfolio")
+    public JSONArray portfolioFilter(@RequestBody JSONObject body){
+        //inserire il codice
+        return upworkservice.portfolioFilterGenerator();
     }
 }

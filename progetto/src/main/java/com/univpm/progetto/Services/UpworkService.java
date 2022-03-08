@@ -1,5 +1,6 @@
 package com.univpm.progetto.Services;
 
+import org.json.JSONArray;
 import org.json.JSONObject;
 
 /**
@@ -12,9 +13,9 @@ public class UpworkService {
      * Metodo per avviare una ricerca
      * @return search
      */
-    public JSONObject startSearch(){
+    public JSONArray startSearch(){
         // insert code here
-        JSONObject search = new JSONObject();
+        JSONArray search = new JSONArray();
         return search;
     }
     /**
@@ -23,16 +24,26 @@ public class UpworkService {
      */
     public JSONObject statsGenerator(){
         //insert code here
+        Freelancer freelancer = new Freelancer();
         JSONObject stats = new JSONObject();
+        stats.put("average portfolio_items_count", freelancer.portfolioAverage());
+        stats.put("variance portfolio_items_count", freelancer.portfolioVariance());
+        stats.put("average skills", freelancer.skillAverage());
+        stats.put("variance skills", freelancer.skillVariance());
         return stats;
     }
     /**
-     * Metodo per generare i filtri
+     * Metodi per generare i filtri
      * @return filters
      */
-    public JSONObject filtersGenerator(){
+    public JSONArray feedbackFilterGenerator(){
         //insert code here
-        JSONObject filters = new JSONObject();
+        JSONArray filters = new JSONArray();
+        return filters;
+    }
+    public JSONArray portfolioFilterGenerator(){
+        //insert code here
+        JSONArray filters = new JSONArray();
         return filters;
     }
     
