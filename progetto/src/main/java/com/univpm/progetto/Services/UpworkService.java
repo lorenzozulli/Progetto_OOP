@@ -37,13 +37,13 @@ public class UpworkService {
      * @return filters
      */
     public JSONArray feedbackFilterGenerator(){
-        //insert code here
         JSONArray filters = new JSONArray();
+        filters.ordinoPerFeedback();
         return filters;
     }
     public JSONArray portfolioFilterGenerator(){
-        //insert code here
         JSONArray filters = new JSONArray();
+        filters.ordinoPerDimensionePortfolio();
         return filters;
     }
     

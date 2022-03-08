@@ -1,6 +1,8 @@
 package com.univpm.progetto.StatsandFilters;
 
 import java.util.Vector;
+
+import org.json.JSONArray;
 /**
  * Classe che ci permette di accedere ai filtri 
  * @author Lorenzo Zulli, Giovanni Prati
@@ -11,8 +13,8 @@ public class Filters {
 	 * Metodo per ordinare gli users con la skill Java per feedback in ordine crescente (quicksort)
 	 * @param users
 	 */
-	public void ordinoPerFeedback(Vector<Freelancer> users,int lowIndex,int highIndex) {
-		if (lowIndex >= highIndex) return; //se abbiamo a che fare con un vettore unitario o abbiamo terminato
+	public JSONArray ordinoPerFeedback(Vector<Freelancer> users,int lowIndex,int highIndex) {
+		if (lowIndex >= highIndex) return null; //se abbiamo a che fare con un vettore unitario o abbiamo terminato
 		int pivotIndex = highIndex/2;
 		long pivotValue = users.get(pivotIndex).getFeedback();
 		swap(users,pivotIndex,highIndex);
