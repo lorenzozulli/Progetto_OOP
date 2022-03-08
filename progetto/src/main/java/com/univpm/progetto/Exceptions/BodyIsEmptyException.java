@@ -1,6 +1,8 @@
 package com.univpm.progetto.Exceptions;
-//Classe che descrive l'eccezione nel caso in cui il body sia vuoto
-
+/**
+ * Classe che descrive l'eccezione nel caso in cui il body sia vuoto
+ * @author Lorenzo Zulli, Giovanni Prati
+ */
 public class BodyIsEmptyException extends Exception {
 	/**
 	 * 

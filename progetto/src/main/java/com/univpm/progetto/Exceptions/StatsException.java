@@ -1,4 +1,8 @@
 package com.univpm.progetto.Exceptions;
+/**
+ *  Classe che...
+ *  @author Lorenzo Zulli, Giovanni Prati
+ */
 
 public class StatsException extends Exception {
 
