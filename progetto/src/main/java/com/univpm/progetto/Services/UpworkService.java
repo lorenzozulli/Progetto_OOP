@@ -25,8 +25,7 @@ public class UpworkService extends Filters {
      * @return stats
      */
     public JSONObject statsGenerator(){
-        //insert code here
-        Freelancer freelancer = new Freelancer();
+        Freelancer freelancer = new Freelancer("ciao");
         JSONObject stats = new JSONObject();
         stats.put("average portfolio_items_count", freelancer.portfolioAverage());
         stats.put("variance portfolio_items_count", freelancer.portfolioVariance());

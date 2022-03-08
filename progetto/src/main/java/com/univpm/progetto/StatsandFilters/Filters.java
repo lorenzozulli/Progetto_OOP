@@ -109,7 +109,7 @@ public class Filters {
 	 * @param index1
 	 * @param index2
 	 */	
-	public void swap(Vector<Freelancer> users, int index1, int index2) {
+	public void swap(JSONArray users, int index1, int index2) {
 		Freelancer temp = new Freelancer();
 	    temp.copia(users.get(index1));
 	    users.set(index1,users.get(index2));

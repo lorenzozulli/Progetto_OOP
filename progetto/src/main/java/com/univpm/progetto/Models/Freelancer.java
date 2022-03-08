@@ -1,6 +1,8 @@
 package com.univpm.progetto.Models;
 
 import java.time.LocalDate;
+
+import org.json.JSONObject;
 /**
  * Classe che modella in modo generale il Freelancer
  * @author Lorenzo Zulli, Giovanni Prati
@@ -29,8 +31,8 @@ public class Freelancer {
      * @param description Descrizione
      * @param feedback Numero per indicare il feedback
      * @param id Codice identificativo
-     * @param last_activity Data dell' ultima attività
-     * @param member_since Data di iscrizione ad Upwork
+     * @param last_activity Data dell' ultima attività (ISO 8601)
+     * @param member_since Data di iscrizione ad Upwork (ISO 8601)
      * @param name Il suo nome
      * @param portfolio_items_count Numero di oggetti nel portfolio
      * @param portrait_50
@@ -71,9 +73,16 @@ public class Freelancer {
         this.test_passed_count = test_passed_count;
         this.title = title;       
     }
+
+    public Freelancer(JSONObject freelancer){
+        this.portfolio_items_count = Integer.parseInt(freelancer.get("portfolio_items_count").toString());
+        this.feedback = Long.parseLong(freelancer.get("feedback").toString());
+    }
     
-    @Overloading
-    Freelancer(){}
+    // Empty Constructor 
+    public Freelancer(){
+
+    }
     
     public void copia(Freelancer daCopiare) {
     	this.categories2 = daCopiare.getCategories2();
@@ -328,5 +337,8 @@ public class Freelancer {
             ", title"+ title + '\'' +
             "},";
     }
+
+
+
 
 }
