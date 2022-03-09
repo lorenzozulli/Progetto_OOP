@@ -1,8 +1,8 @@
 package com.univpm.progetto.StatsandFilters;
 
+import com.univpm.progetto.Models.Freelancer;
 import java.util.Vector;
 
-import org.json.JSONArray;
 /**
  * Classe che ci permette di accedere ai filtri 
  * @author Lorenzo Zulli, Giovanni Prati
@@ -13,8 +13,8 @@ public class Filters {
 	 * Metodo per ordinare gli users con la skill Java per feedback in ordine crescente (quicksort)
 	 * @param users
 	 */
-	public JSONArray ordinoPerFeedback(JSONArray users,int lowIndex,int highIndex) {
-		if (lowIndex >= highIndex) return null; //se abbiamo a che fare con un vettore unitario o abbiamo terminato
+	public void ordinoPerFeedback(Vector<Freelancer> users,int lowIndex,int highIndex) {
+		if (lowIndex >= highIndex) return; //se abbiamo a che fare con un vettore unitario o abbiamo terminato
 		int pivotIndex = highIndex/2;
 		long pivotValue = users.get(pivotIndex).getFeedback();
 		swap(users,pivotIndex,highIndex);
@@ -25,9 +25,9 @@ public class Filters {
 	    ordinoPerFeedback(users,leftPointer + 1,highIndex);
     }
 	
-	@Overloading
-	public void ordinoPerFeedback(JSONArray users) {
-		ordinoPerFeedback(users,0,users.length()-1);
+	//@Overloading
+	public void ordinoPerFeedback(Vector<Freelancer> users) {
+		ordinoPerFeedback(users,0,users.size()-1);
 	}
 	/**
 	 * Metodo per ordinare gli userso con la skill Java per dimensione del portfolio in ordine crescente (quicksort)
@@ -47,11 +47,17 @@ public class Filters {
 		ordinoPerDimensionePortfolio(users,leftPointer + 1,highIndex);
 	}
 	
-	@OverLoading
+	//@OverLoading
 	public void ordinoPerDimensionePortfolio(Vector<Freelancer> users) {
 		ordinoPerDimensionePortfolio(users,0,users.size()-1);
 	}
-	
+	/**
+	 * Metodo di supporto per l'ordinamento
+	 * @param users
+	 * @param lowIndex
+	 * @param highIndex
+	 * @param pivotValue
+	 */
 	public int partizionamentoPerFeedback(Vector<Freelancer> users,int lowIndex,int highIndex,long pivotValue) {
         int leftPointer = lowIndex;
         int rightPointer = highIndex - 1;
@@ -77,7 +83,13 @@ public class Filters {
           }
           return leftPointer;		
     }
-	
+	/**
+	 * Metodo di supporto per l'ordinamento
+	 * @param users
+	 * @param lowIndex
+	 * @param highIndex
+	 * @param pivotValue
+	 */
 	public int partizionamentoPerDimensionePortfolio(Vector<Freelancer> users,int lowIndex,int highIndex,int pivotValue) {
         int leftPointer = lowIndex;
         int rightPointer = highIndex - 1;
@@ -104,12 +116,12 @@ public class Filters {
           return leftPointer;		
     }
 	/**
-	 * Metodo per scambiare due Freelancers
+	 * Metodo di supporto per scambiare due Freelancers
 	 * @param users
 	 * @param index1
 	 * @param index2
 	 */	
-	public void swap(JSONArray users, int index1, int index2) {
+	public void swap(Vector<Freelancer> users, int index1, int index2) {
 		Freelancer temp = new Freelancer();
 	    temp.copia(users.get(index1));
 	    users.set(index1,users.get(index2));

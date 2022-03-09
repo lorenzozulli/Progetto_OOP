@@ -2,6 +2,8 @@ package com.univpm.progetto.StatsandFilters;
 
 import com.univpm.progetto.Models.Freelancer;
 
+import java.util.Vector;
+
 /**
  * Classe per ottenere le statistiche legate agli utenti
  * @author Lorenzo Zulli, Giovanni Prati
@@ -23,7 +25,7 @@ public class Stats {
      * @return Varianza del numero di progetti nel portfolrio
      */
     public double portfolioVariance(Vector<Freelancer> users){
-        double k, g;
+        double k, g=0;
         for (Freelancer s : users) {
             // calcolo della varianza
             k = s.getPortfolio_items_count() - portfolioAverage(users);
@@ -38,9 +40,10 @@ public class Stats {
     public double skillAverage(Vector<Freelancer> users){
         double sumskills = 0;
         String[] skillsperfreelancer;
-        for (Freelancer s : users)
+        for (Freelancer s : users){
             skillsperfreelancer = s.getSkills();
             sumskills += skillsperfreelancer.length;
+        }
         return (sumskills/users.size());
     }
     /**
@@ -48,7 +51,7 @@ public class Stats {
      * @return Varianza del numero di skill
      */
     public double skillVariance(Vector<Freelancer> users){
-        double k, g, sumskills = 0;
+        double k, g=0, sumskills = 0;
         String[] skillsperfreelancer;
         for (Freelancer s : users) {
             // per prendere il numero di skills
