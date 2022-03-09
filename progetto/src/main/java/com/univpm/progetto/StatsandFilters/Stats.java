@@ -9,7 +9,7 @@ import java.util.Vector;
  * @author Lorenzo Zulli, Giovanni Prati
  */
 
-public class Stats {
+public class Stats{
     /**
      * Metodo per ottenere la media di progetti nel portfolio degli utenti con la skill "Java"
      * @return Media del numero di progetti nel portfolio

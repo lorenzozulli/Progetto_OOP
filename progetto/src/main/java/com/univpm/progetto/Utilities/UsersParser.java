@@ -5,10 +5,12 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
+import java.text.SimpleDateFormat;
 import java.net.URI;
 //import java.util.HashMap;
 
@@ -46,6 +48,7 @@ public class UsersParser extends Parser {
          */
         public static String parser(String responsebody){
             JSONArray freelancers = new JSONArray(responsebody);
+            DateTimeFormatter dtf = DateTimeFormatter.ofPattern("YYYY-MM-DD");
             for(int i=0; i< freelancers.length(); i++){
                 JSONObject freelancer = freelancers.getJSONObject(i);
 
@@ -53,8 +56,8 @@ public class UsersParser extends Parser {
                 String country = freelancer.getString("country");
                 String description = freelancer.getString("description");
                 long feedback = freelancer.getLong("feedback");
-                LocalDate last_activity = freelancer.getLocalDate("last_activity");
-                LocalDate member_since = freelancer.getLocalDate("member_since");
+                LocalDate last_activity = freelancer.getDayOfYear("last_activity"); // da fare il parsing della data
+                LocalDate member_since = freelancer.getDate("member_since"); // anche qui
                 String name = freelancer.getString("name");
                 int portfolio_items_count = freelancer.getInt("portfolio_items_count");
                 String portrait_50 = freelancer.getString("portrait_50");

@@ -1,6 +1,8 @@
 package com.univpm.progetto.Services;
 
 import com.univpm.progetto.StatsandFilters.Filters;
+import com.univpm.progetto.StatsandFilters.Stats;
+import com.univpm.progetto.Models.Freelancer;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -10,7 +12,11 @@ import org.json.JSONObject;
  * @author Lorenzo Zulli, Giovanni Prati
  */
 
-public class UpworkService extends Filters {
+public class UpworkService {
+
+    private Stats stats;
+    private Filters filters;
+
     /**
      * Metodo per avviare una ricerca
      * @return search
@@ -25,12 +31,12 @@ public class UpworkService extends Filters {
      * @return stats
      */
     public JSONObject statsGenerator(){
-        Freelancer freelancer = new Freelancer("ciao");
+        Freelancer freelancer = new Freelancer();
         JSONObject stats = new JSONObject();
-        stats.put("average portfolio_items_count", freelancer.portfolioAverage());
-        stats.put("variance portfolio_items_count", freelancer.portfolioVariance());
-        stats.put("average skills", freelancer.skillAverage());
-        stats.put("variance skills", freelancer.skillVariance());
+        stats.put("average portfolio_items_count", this.stats.portfolioAverage());
+        stats.put("variance portfolio_items_count", this.stats.portfolioVariance());
+        stats.put("average skills", this.stats.skillAverage());
+        stats.put("variance skills", this.stats.skillVariance());
         return stats;
     }
     /**
@@ -39,12 +45,12 @@ public class UpworkService extends Filters {
      */
     public JSONArray feedbackFilterGenerator(){
         JSONArray filters = new JSONArray();
-        ordinoPerFeedback(filters);
+        this.filters.ordinoPerFeedback();
         return filters;
     }
     public JSONArray portfolioFilterGenerator(){
         JSONArray filters = new JSONArray();
-        filters.ordinoPerDimensionePortfolio();
+        this.filters.ordinoPerDimensionePortfolio();
         return filters;
     }
     
