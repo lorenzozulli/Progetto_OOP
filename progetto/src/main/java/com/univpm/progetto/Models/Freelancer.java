@@ -1,7 +1,9 @@
 package com.univpm.progetto.Models;
 
 import java.time.LocalDate;
+import java.util.Vector;
 
+import org.json.JSONArray;
 import org.json.JSONObject;
 /**
  * Classe che modella in modo generale il Freelancer
@@ -42,7 +44,7 @@ public class Freelancer {
      * @param test_passed_count Numero di test passati 
      * @param title Titolo del profilo del freelancer
      */
-    Freelancer(String[] categories2,
+    public Freelancer(String[] categories2,
                 String country,
                 String description,
                 Long feedback,
@@ -73,7 +75,45 @@ public class Freelancer {
         this.test_passed_count = test_passed_count;
         this.title = title;       
     }
+    
 
+    public JSONObject jsonMaker() {
+    	JSONObject datiFreelancer = new JSONObject();  //creo oggetto json
+    	JSONArray categories2_ = new JSONArray();  //creo elenco di json che contiene le categories
+    	JSONArray skills_ = new JSONArray();  //creo elenco di json che contiene le skills
+    	//aggiungo le categories2 nel JSONArray categories2_
+    	//SEMPLIFICAZIONE: ogni freelancer avrà 3 stringhe nell'array categories2
+    	categories2_.put(0, categories2[0]);  
+    	categories2_.put(1, categories2[1]);  
+    	categories2_.put(2, categories2[2]);  
+    	datiFreelancer.put("categories2", categories2);  //aggiungo categories2_ nel JSONObject datiFreelancer
+    	datiFreelancer.put("country", country);  
+    	datiFreelancer.put("description", description);
+    	datiFreelancer.put("feedback", feedback);
+    	datiFreelancer.put("id", id);
+    	datiFreelancer.put("last_activity", last_activity);
+    	datiFreelancer.put("member_since", member_since);
+    	datiFreelancer.put("name", name);
+    	datiFreelancer.put("portfolio_items_count", portfolio_items_count);
+    	datiFreelancer.put("portrait_50", portrait_50);
+    	datiFreelancer.put("profile_type", profile_type);
+    	datiFreelancer.put("rate", rate);
+    	//SEMPLIFICAZIONE: ogni freelancer avrà 6 stringhe nell'array skills
+    	skills_.put(0, skills[0]);  
+    	skills_.put(1, skills[1]);  
+    	skills_.put(2, skills[2]); 
+    	skills_.put(3, skills[3]); 
+    	skills_.put(4, skills[4]); 
+    	skills_.put(5, skills[5]); 
+    	datiFreelancer.put("skills", skills);
+    	datiFreelancer.put("test_passed_count", test_passed_count);
+    	datiFreelancer.put("title", title);
+
+    	JSONObject freelancer = new JSONObject();
+    	freelancer.put("freelancer",datiFreelancer);
+    	return freelancer;	
+    }
+    
     public Freelancer(JSONObject freelancer){
         this.portfolio_items_count = Integer.parseInt(freelancer.get("portfolio_items_count").toString());
         this.feedback = Long.parseLong(freelancer.get("feedback").toString());
@@ -101,7 +141,7 @@ public class Freelancer {
         this.test_passed_count = daCopiare.getTest_passed_count();
         this.title = daCopiare.getTitle();    
     }
-
+   
     /**
      * @return Ritorna le "categories2"
      */
@@ -266,7 +306,7 @@ public class Freelancer {
     /**
      * @param rate the rate to set
      */
-    public void setRate(int rate) {
+    public void setRate(float rate) {
         this.rate = rate;
     }
 

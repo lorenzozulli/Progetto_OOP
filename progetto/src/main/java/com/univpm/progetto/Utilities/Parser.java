@@ -6,7 +6,7 @@ package com.univpm.progetto.Utilities;
  */
 public class Parser {
     private String api_key;
-
+    
     Parser(String api_key){
         this.api_key = api_key;
     }
