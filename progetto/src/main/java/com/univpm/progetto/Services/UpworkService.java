@@ -2,6 +2,8 @@ package com.univpm.progetto.Services;
 
 import com.univpm.progetto.StatsandFilters.Filters;
 import com.univpm.progetto.StatsandFilters.Stats;
+import com.univpm.progetto.Exceptions.FiltersException;
+import com.univpm.progetto.Exceptions.StatsException;
 //import com.univpm.progetto.Models.Freelancer;
 import com.univpm.progetto.Models.Users;
 
@@ -33,7 +35,7 @@ public class UpworkService {
      * Metodo per generare le stats
      * @return stats
      */
-    public JSONObject statsGenerator(){
+    public JSONObject statsGenerator() throws StatsException{
         //Vector<Freelancer> f = new Vector<Freelancer>(); 
         Users f = new Users();
         JSONObject stats = new JSONObject();
@@ -47,13 +49,13 @@ public class UpworkService {
      * Metodi per generare i filtri
      * @return filters
      */
-    public JSONArray feedbackFilterGenerator(){
+    public JSONArray feedbackFilterGenerator() throws FiltersException{
         Users f = new Users();
         JSONArray filters = new JSONArray();
         this.filters.ordinoPerFeedback(f.getFreelancers());
         return filters;
     }
-    public JSONArray portfolioFilterGenerator(){
+    public JSONArray portfolioFilterGenerator()throws FiltersException{
         Users f = new Users();
         JSONArray filters = new JSONArray();
         this.filters.ordinoPerDimensionePortfolio(f.getFreelancers());

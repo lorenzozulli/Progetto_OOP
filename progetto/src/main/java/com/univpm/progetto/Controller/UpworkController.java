@@ -1,5 +1,8 @@
 package com.univpm.progetto.Controller;
 
+import com.univpm.progetto.Exceptions.BadRequestException;
+import com.univpm.progetto.Exceptions.FiltersException;
+import com.univpm.progetto.Exceptions.StatsException;
 import com.univpm.progetto.Services.UpworkService;
 
 import org.json.JSONObject;
@@ -19,7 +22,7 @@ public class UpworkController {
      * Rotta per avviare la ricerca degli utenti con la skill Java
      */
     @PostMapping(value = "/searchjava")
-    public JSONArray startSearch(@RequestBody JSONObject body){
+    public JSONArray startSearch(@RequestBody JSONObject body) throws BadRequestException{
         //inserire il codice
         return upworkservice.startSearch();
     }
@@ -27,7 +30,7 @@ public class UpworkController {
      * Rotta per generare le stats
      */
     @PostMapping(value = "/stats")
-    public JSONObject stats(@RequestBody JSONObject body){
+    public JSONObject stats(@RequestBody JSONObject body) throws StatsException{
         //inserire il codice
         return upworkservice.statsGenerator();
     }
@@ -35,12 +38,12 @@ public class UpworkController {
      * Rotta per generare i filters
      */
     @PostMapping(value = "/filters/feedback")
-    public JSONArray feedbackFilter(@RequestBody JSONObject body){
+    public JSONArray feedbackFilter(@RequestBody JSONObject body) throws FiltersException{
         //inserire il codice
         return upworkservice.feedbackFilterGenerator();
     }
     @PostMapping(value = "/filters/portfolio")
-    public JSONArray portfolioFilter(@RequestBody JSONObject body){
+    public JSONArray portfolioFilter(@RequestBody JSONObject body) throws FiltersException{
         //inserire il codice
         return upworkservice.portfolioFilterGenerator();
     }
