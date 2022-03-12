@@ -12,7 +12,6 @@ import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 import java.text.SimpleDateFormat;
 import java.net.URI;
-//import java.util.HashMap;
 
 /**
  * Classe per cercare gli users con la skill Java
@@ -22,12 +21,6 @@ public class UsersParser extends Parser {
         public UsersParser(String api_key){
             super(api_key);
         }
-        // pezzo di codice preso direttamente da Upwork, vediamo cosa dobbiamo farci
-        /*Search freelancers = new Search(client);
-        HashMap<String, String> params = new HashMap<String, String>();
-        params.put("q", "Java");
-
-        freelancers.find(params);*/
         
         /**
          * Metodo per effettuare la richiesta HTTP
@@ -50,8 +43,8 @@ public class UsersParser extends Parser {
             DateTimeFormatter dtf = DateTimeFormatter.ofPattern("YYYY-MM-DD");
             for(int i=0; i< freelancers.length(); i++){
                 JSONObject freelancer = freelancers.getJSONObject(i);
-
-                JSONArray categories2 = freelancer.getJSONArray("categories2");
+                
+                String[] categories2 = freelancer.getString("categories2");
                 String country = freelancer.getString("country");
                 String description = freelancer.getString("description");
                 long feedback = freelancer.getLong("feedback");
@@ -77,9 +70,12 @@ public class UsersParser extends Parser {
          * @return
          */
         public String URLGenerator(){
-            String URL = "https://upwork.com/api"; // entry point della documentazione
-            URL += ("&appid=" + super.getApi_key());
-            // inserire tutto il resto del URL
+            String URL = "https://upwork.com/api/profiles/v2/search/"; // entry point della documentazione
+            URL += ("jobs.json?q=");
+            URL += ("java"); // per cambiare la skill da cercare
+            URL += ("&callback=?");
+            URL += ("&oauth_params=");
+            URL += ("xxxxx"); // per cambiare il parametro di autenticazione
             return URL;
         }
         // link per prendere la gente con la skill java

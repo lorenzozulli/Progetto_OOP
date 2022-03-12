@@ -1,5 +1,5 @@
 # Progetto di Programmazione a oggetti di Lorenzo Zulli e Giovanni Prati
-Lo scopo del progetto è quello di sviluppare un"applicazione Java per analizzare i freelancer aventi la skill *"java"*.
+Lo scopo del progetto è quello di sviluppare un'applicazione Java per analizzare i freelancer aventi la skill *"java"*.
 
 Il programma prende e processa, tramite l"API di Upwork gli utenti aventi la skill *"java"*, poi resituisce a noi Statistiche e/o Filtri in base alla rotta scelta.
 
