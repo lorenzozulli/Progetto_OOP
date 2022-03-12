@@ -2,13 +2,13 @@ package com.univpm.progetto.Services;
 
 import com.univpm.progetto.StatsandFilters.Filters;
 import com.univpm.progetto.StatsandFilters.Stats;
-import com.univpm.progetto.Models.Freelancer;
+//import com.univpm.progetto.Models.Freelancer;
 import com.univpm.progetto.Models.Users;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
 
-import java.util.Vector;
+//import java.util.Vector;
 
 /**
  * Classe contente i metodi di servizio
@@ -34,12 +34,13 @@ public class UpworkService {
      * @return stats
      */
     public JSONObject statsGenerator(){
-        Users users = 
+        //Vector<Freelancer> f = new Vector<Freelancer>(); 
+        Users f = new Users();
         JSONObject stats = new JSONObject();
-        stats.put("average portfolio_items_count", this.stats.portfolioAverage(users.getFreelancer()));
-        stats.put("variance portfolio_items_count", this.stats.portfolioVariance(freelancer));
-        stats.put("average skills", this.stats.skillAverage(freelancer));
-        stats.put("variance skills", this.stats.skillVariance(freelancer));
+        stats.put("average portfolio_items_count", this.stats.portfolioAverage(f.getFreelancers()));
+        stats.put("variance portfolio_items_count", this.stats.portfolioVariance(f.getFreelancers()));
+        stats.put("average skills", this.stats.skillAverage(f.getFreelancers()));
+        stats.put("variance skills", this.stats.skillVariance(f.getFreelancers()));
         return stats;
     }
     /**
@@ -47,13 +48,15 @@ public class UpworkService {
      * @return filters
      */
     public JSONArray feedbackFilterGenerator(){
+        Users f = new Users();
         JSONArray filters = new JSONArray();
-        this.filters.ordinoPerFeedback();
+        this.filters.ordinoPerFeedback(f.getFreelancers());
         return filters;
     }
     public JSONArray portfolioFilterGenerator(){
+        Users f = new Users();
         JSONArray filters = new JSONArray();
-        this.filters.ordinoPerDimensionePortfolio();
+        this.filters.ordinoPerDimensionePortfolio(f.getFreelancers());
         return filters;
     }
     

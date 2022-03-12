@@ -1,7 +1,7 @@
 package com.univpm.progetto.Models;
 
 import java.time.LocalDate;
-import java.util.Vector;
+//import java.util.Vector;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -77,6 +77,10 @@ public class Freelancer {
     }
     
 
+    
+    /** 
+     * @return JSONObject
+     */
     public JSONObject jsonMaker() {
     	JSONObject datiFreelancer = new JSONObject();  //creo oggetto json
     	JSONArray categories2_ = new JSONArray();  //creo elenco di json che contiene le categories
@@ -113,6 +117,9 @@ public class Freelancer {
     	freelancer.put("freelancer",datiFreelancer);
     	return freelancer;	
     }
+    /**
+     * Costruttore freelancer 2
+     */
     
     public Freelancer(JSONObject freelancer){
         this.portfolio_items_count = Integer.parseInt(freelancer.get("portfolio_items_count").toString());
@@ -124,6 +131,10 @@ public class Freelancer {
 
     }
     
+    
+    /** 
+     * @param daCopiare
+     */
     public void copia(Freelancer daCopiare) {
     	this.categories2 = daCopiare.getCategories2();
         this.country = daCopiare.getCountry();

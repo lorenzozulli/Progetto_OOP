@@ -30,8 +30,7 @@ public class UsersParser extends Parser {
         freelancers.find(params);*/
         
         /**
-         * Metodo per la richesta degli utenti
-         * @return
+         * Metodo per effettuare la richiesta HTTP
          */
         public void usersRequest(){
             HttpClient client = HttpClient.newHttpClient();
@@ -44,7 +43,7 @@ public class UsersParser extends Parser {
         /**
          * Metodo per fare il parsing degli utenti con la skill java per poi farci le vere e proprie operazioni
          * @param responsebody
-         * @return null
+         * @return Vector<Freelancer>
          */
         public static String parser(String responsebody){
             JSONArray freelancers = new JSONArray(responsebody);
@@ -83,6 +82,7 @@ public class UsersParser extends Parser {
             // inserire tutto il resto del URL
             return URL;
         }
-    
+        // link per prendere la gente con la skill java
+        // https://www.upwork.com/api/profiles/v2/search/jobs.json?q=java&callback=?&oauth_params=xxxxx
 }
 
