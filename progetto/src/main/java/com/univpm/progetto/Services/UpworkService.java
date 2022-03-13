@@ -2,10 +2,14 @@ package com.univpm.progetto.Services;
 
 import com.univpm.progetto.StatsandFilters.Filters;
 import com.univpm.progetto.StatsandFilters.Stats;
+
+import java.util.Vector;
+
 import com.univpm.progetto.Exceptions.FiltersException;
 import com.univpm.progetto.Exceptions.StatsException;
-//import com.univpm.progetto.Models.Freelancer;
+import com.univpm.progetto.Models.Freelancer;
 import com.univpm.progetto.Models.Users;
+import com.univpm.*;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -29,15 +33,16 @@ public class UpworkService {
     public JSONArray startSearch(){
         // insert code here
         JSONArray search = new JSONArray();
+        search = usersRequest();
         return search;
     }
     /**
      * Metodo per generare le stats
      * @return stats
      */
-    public JSONObject statsGenerator() throws StatsException{
+    public JSONObject statsGenerator(Vector<Freelancer> f) throws StatsException{
         //Vector<Freelancer> f = new Vector<Freelancer>(); 
-        Users f = new Users();
+        //Users f = new Users();
         JSONObject stats = new JSONObject();
         stats.put("average portfolio_items_count", this.stats.portfolioAverage(f.getFreelancers()));
         stats.put("variance portfolio_items_count", this.stats.portfolioVariance(f.getFreelancers()));

@@ -19,7 +19,10 @@ import org.springframework.web.bind.annotation.RestController;
 public class UpworkController {
     private UpworkService upworkservice;
     /**
-     * Rotta per avviare la ricerca degli utenti con la skill Java
+     * Rotta per iniziare la ricerca degli utenti con la skill "java"
+     * @param body
+     * @return
+     * @throws BadRequestException
      */
     @PostMapping(value = "/searchjava")
     public JSONArray startSearch(@RequestBody JSONObject body) throws BadRequestException{
@@ -27,21 +30,33 @@ public class UpworkController {
         return upworkservice.startSearch();
     }
     /**
-     * Rotta per generare le stats
+     * Rotta per generare le statistiche
+     * @param body
+     * @return
+     * @throws StatsException
      */
     @PostMapping(value = "/stats")
-    public JSONObject stats(@RequestBody JSONObject body) throws StatsException{
+    public JSONObject stats(@RequestBody JSONArray body) throws StatsException{
         //inserire il codice
-        return upworkservice.statsGenerator();
+        return upworkservice.statsGenerator(body);
     }
-    /**
-     * Rotta per generare i filters
-     */
+   /**
+    * Rotta per generare il filtro per feedback
+    * @param body
+    * @return
+    * @throws FiltersException
+    */
     @PostMapping(value = "/filters/feedback")
     public JSONArray feedbackFilter(@RequestBody JSONObject body) throws FiltersException{
         //inserire il codice
         return upworkservice.feedbackFilterGenerator();
     }
+    /**
+     * Rotta per generare il filtro per dimensione del portfolio
+     * @param body
+     * @return
+     * @throws FiltersException
+     */
     @PostMapping(value = "/filters/portfolio")
     public JSONArray portfolioFilter(@RequestBody JSONObject body) throws FiltersException{
         //inserire il codice
