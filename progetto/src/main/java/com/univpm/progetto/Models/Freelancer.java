@@ -1,7 +1,7 @@
 package com.univpm.progetto.Models;
 
 import java.time.LocalDate;
-//import java.util.Vector;
+import java.util.Vector;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -388,8 +388,12 @@ public class Freelancer {
             ", title"+ title + '\'' +
             "},";
     }
+    
+    Vector<Freelancer> freelancers = new Vector<Freelancer>();
 
-
-
-
+    public Vector<Freelancer> getFreelancers(){
+        return freelancers;
+    }
+    public void setFreelancers(Vector<Freelancer> freelancers){
+        this.freelancers = freelancers;
 }
