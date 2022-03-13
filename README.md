@@ -1,9 +1,14 @@
 # Progetto di Programmazione a oggetti di Lorenzo Zulli e Giovanni Prati
-Lo scopo del progetto è quello di sviluppare un'applicazione Java per analizzare i freelancer aventi la skill *"java"*.
+## Macro tema: Upwork
+Lo scopo del progetto è quello di sviluppare un'applicazione Java per analizzare i freelancer appartenenti al sito con la skill *"java"*.
 
-Il programma prende e processa, tramite l"API di Upwork gli utenti aventi la skill *"java"*, poi resituisce a noi Statistiche e/o Filtri in base alla rotta scelta.
+Il programma prende e processa, tramite l'API di Upwork gli utenti con la skill *"java"*, poi resituisce a noi Statistiche e/o Filtri in base alla rotta scelta.
+
+Upwork è una piattaforma americana per effettuare freelancing online e/o intervistare, assumere e collaborare con freelancers.
+Per maggiori infomazioni: [Sito ufficiale di Upwork](https://www.upwork.com/), [Pagina Wikipedia](https://en.wikipedia.org/wiki/Upwork).
 
 ## Rotte Disponibili
+Vengono rese disponibili le seguenti rotte su [https://localhost:8080](https://localhost:8080).
 | Rotta     | Metodo | Funzione                      |
 |-----------|--------|-------------------------------|
 | /search   | POST   | Avvia la ricerca degli utenti |
@@ -107,11 +112,11 @@ Tramite questa rotta andiamo a generare i seguenti filtri attraverso le seguenti
 ]
 ```
 # Javadoc
-Attraverso i commenti "Javadoc" siamo riusciti a creare una documentazione dettagliata di tutte le classi e di diversi metodi, di seguito il link: [javadoc del progetto](https://www.youtube.com/watch?v=dQw4w9WgXcQ)
+Attraverso i commenti "Javadoc" siamo riusciti a creare una documentazione dettagliata di tutte le classi e di diversi metodi, di seguito il link: [Javadoc del progetto](https://www.youtube.com/watch?v=dQw4w9WgXcQ)
 
 # Software utilizzati
 * [Eclipse](https://www.eclipse.org/downloads/) - Ambiente di sviluppo (Giovanni Prati).
 * [Visual studio Code](https://code.visualstudio.com/Download) - Ambiente di sviluppo (Lorenzo Zulli).
 * [Maven](https://maven.apache.org/) - Gestione del progetto.
-* [Spring Boot](https://spring.io/projects/spring-boot) - Framework per lo sviluppo dell"applicazione Java.
+* [Spring Boot](https://spring.io/projects/spring-boot) - Framework per lo sviluppo dell'applicazione Java.
 * [Postman](https://www.postman.com/) - Ambiente per effettuare richieste API.

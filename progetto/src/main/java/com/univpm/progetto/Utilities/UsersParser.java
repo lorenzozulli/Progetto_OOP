@@ -38,9 +38,10 @@ public class UsersParser extends Parser {
          * @param responsebody
          * @return Vector<Freelancer>
          */
-        public static String parser(String responsebody){
+        public static Vector<Freelancer> parser(String responsebody){
             JSONArray freelancers = new JSONArray(responsebody);
             DateTimeFormatter dtf = DateTimeFormatter.ofPattern("YYYY-MM-DD");
+            Vector<Freelancer> f = new Vector<Freelancer>();
             for(int i=0; i< freelancers.length(); i++){
                 JSONObject freelancer = freelancers.getJSONObject(i);
                 
@@ -60,7 +61,7 @@ public class UsersParser extends Parser {
                 String title = freelancer.getString("title");
 
                 int skills_count = skills_array.length(); 
-                //System.out.println(feedback +" "+ portfolio_items_count +" "+ skills_count);        
+                return      
             }
             return null;
         }
