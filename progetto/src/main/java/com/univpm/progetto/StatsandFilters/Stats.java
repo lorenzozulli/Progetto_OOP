@@ -1,4 +1,3 @@
-// COMMENTO BUFFO
 package com.univpm.progetto.StatsandFilters;
 
 import com.univpm.progetto.Models.Freelancer;
