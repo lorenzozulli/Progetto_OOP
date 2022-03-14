@@ -110,10 +110,10 @@ public class Freelancer {
      * Costruttore freelancer 2
      */
     
-    public Freelancer(JSONObject freelancer){
+    /*public Freelancer(JSONObject freelancer){
         this.portfolio_items_count = Integer.parseInt(freelancer.get("portfolio_items_count").toString());
         this.feedback = Long.parseLong(freelancer.get("feedback").toString());
-    }
+    }*/
     
     // Empty Constructor 
     public Freelancer(){
@@ -385,4 +385,5 @@ public class Freelancer {
     }
     public void setFreelancers(Vector<Freelancer> freelancers){
         this.freelancers = freelancers;
+    }
 }
