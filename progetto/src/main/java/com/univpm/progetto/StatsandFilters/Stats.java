@@ -13,6 +13,7 @@ public class Stats{
     /**
      * Metodo per ottenere la media di progetti nel portfolio degli utenti con la skill "Java"
      * @return Media del numero di progetti nel portfolio
+     * @param users
      */
     public double portfolioAverage(Vector<Freelancer> users){
         double sumportfolioitems = 0;
@@ -22,7 +23,8 @@ public class Stats{
     }
     /**
      * Metodo per ottenere la varianza di progetti nel portfolio degli utenti con la skill "Java"
-     * @return Varianza del numero di progetti nel portfolrio
+     * @return Varianza del numero di progetti nel portfolio
+     * @param users
      */
     public double portfolioVariance(Vector<Freelancer> users){
         double k, g=0;
@@ -36,6 +38,7 @@ public class Stats{
     /**
      * Metodo per ottenere la media del numero di skill degli utenti con la skill "Java"
      * @return Media del numero di skill
+     * @param users
      */
     public double skillAverage(Vector<Freelancer> users){
         double sumskills = 0;
@@ -49,6 +52,7 @@ public class Stats{
     /**
      * Metodo per ottenere la varianza di numero di skill degli utenti con la skill "Java"
      * @return Varianza del numero di skill
+     * @param users
      */
     public double skillVariance(Vector<Freelancer> users){
         double k, g=0, sumskills = 0;
