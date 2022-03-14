@@ -37,9 +37,9 @@ public class UsersParser extends Parser {
                     .join();
         }
         /**
-         * Metodo per fare il parsing degli utenti con la skill java per poi farci le vere e proprie operazioni
+         * Metodo per effettuare il parsing degli utenti con la skill java per poi farci le vere e proprie operazioni
          * @param responsebody
-         * @return Vector<Freelancer>
+         * @return f (come vettore di Freelancers)
          */
         public static Vector<Freelancer> parser(String responsebody){
             JSONArray freelancers = new JSONArray(responsebody);
@@ -52,7 +52,7 @@ public class UsersParser extends Parser {
                 String description = freelancer.getString("description");
                 long feedback = freelancer.getLong("feedback");
                 LocalDate last_activity = (LocalDate) freelancer.get("last_activity"); // in type cast per comodita
-		        LocalDate member_since = (LocalDate) freelancer.get("member_since"); // inttype cast per comodita
+		        LocalDate member_since = (LocalDate) freelancer.get("member_since"); // in type cast per comodita
                 String name = freelancer.getString("name");
                 int portfolio_items_count = freelancer.getInt("portfolio_items_count");
                 String portrait_50 = freelancer.getString("portrait_50");
@@ -75,7 +75,7 @@ public class UsersParser extends Parser {
 
         /**
          * Metodo per generare l'URL desiderato
-         * @return
+         * @return URL (come una stringa)
          */
         public String URLGenerator(){
             String URL = "https://upwork.com/api/profiles/v2/search/"; // entry point della documentazione

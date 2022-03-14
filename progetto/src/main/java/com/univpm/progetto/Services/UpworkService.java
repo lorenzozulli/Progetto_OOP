@@ -8,16 +8,14 @@ import java.util.Vector;
 import com.univpm.progetto.Exceptions.FiltersException;
 import com.univpm.progetto.Exceptions.StatsException;
 import com.univpm.progetto.Models.Freelancer;
-import com.univpm.progetto.Models.Users;
-import com.univpm.*;
+//import com.univpm.progetto.Models.Users;
+import com.univpm.progetto.Utilities.UsersParser;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
 
-//import java.util.Vector;
-
 /**
- * Classe contente i metodi di servizio
+ * Classe contente i metodi del servizio del programma
  * @author Lorenzo Zulli, Giovanni Prati
  */
 
@@ -33,16 +31,15 @@ public class UpworkService {
     public JSONArray startSearch(){
         // insert code here
         JSONArray search = new JSONArray();
-        search = usersRequest();
+        usersRequest();
         return search;
     }
     /**
      * Metodo per generare le stats
      * @return stats
+     * @throws StatsException
      */
     public JSONObject statsGenerator(Vector<Freelancer> f) throws StatsException{
-        //Vector<Freelancer> f = new Vector<Freelancer>(); 
-        //Users f = new Users();
         JSONObject stats = new JSONObject();
         stats.put("average portfolio_items_count", this.stats.portfolioAverage(f.getFreelancers()));
         stats.put("variance portfolio_items_count", this.stats.portfolioVariance(f.getFreelancers()));
@@ -51,17 +48,23 @@ public class UpworkService {
         return stats;
     }
     /**
-     * Metodi per generare i filtri
+     * Metodi per generare il filtro per feedback
      * @return filters
+     * @throws FiltersException
      */
     public JSONArray feedbackFilterGenerator() throws FiltersException{
-        Users f = new Users();
+        Vector<Freelancer> f = new Vector<Freelancer>();
         JSONArray filters = new JSONArray();
         this.filters.ordinoPerFeedback(f.getFreelancers());
         return filters;
     }
+    /**
+     * Metodo per generare il filtro per dimensione del portfolio
+     * @return filters
+     * @throws FiltersException
+     */
     public JSONArray portfolioFilterGenerator()throws FiltersException{
-        Users f = new Users();
+        Vector<Freelancer> f = new Vector<Freelancer>();
         JSONArray filters = new JSONArray();
         this.filters.ordinoPerDimensionePortfolio(f.getFreelancers());
         return filters;

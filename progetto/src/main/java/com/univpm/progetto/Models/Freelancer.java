@@ -44,21 +44,10 @@ public class Freelancer {
      * @param test_passed_count Numero di test passati 
      * @param title Titolo del profilo del freelancer
      */
-    public Freelancer(String[] categories2,
-                String country,
-                String description,
-                Long feedback,
-                String id,
-                LocalDate last_activity,
-                LocalDate member_since,
-                String name,
-                int portfolio_items_count,
-                String portrait_50,
-                String profile_type,
-                float rate,
-                String[] skills,
-                int test_passed_count,
-                String title){
+    public Freelancer(String[] categories2, String country, String description, Long feedback,
+                      String id, LocalDate last_activity, LocalDate member_since, String name,
+                      int portfolio_items_count, String portrait_50, String profile_type, float rate,
+                      String[] skills, int test_passed_count, String title){
         this.categories2 = categories2;
         this.country = country;
         this.description = description;
@@ -389,7 +378,7 @@ public class Freelancer {
             "},";
     }
     
-    Vector<Freelancer> freelancers = new Vector<Freelancer>();
+    private Vector<Freelancer> freelancers = new Vector<Freelancer>();
 
     public Vector<Freelancer> getFreelancers(){
         return freelancers;

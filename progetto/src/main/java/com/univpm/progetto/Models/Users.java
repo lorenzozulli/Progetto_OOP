@@ -23,13 +23,13 @@ public class Users {
     public static void setNumeroFreelancer(int numFreelancer_) {
         numFreelancer = numFreelancer_;
     }
-
+    /*
     public Vector<Freelancer> getFreelancers(){
         return freelancers;
     }
     public void setFreelancers(Vector<Freelancer> freelancers){
         this.freelancers = freelancers;
-    }
+    }*/
 
     	
 }
