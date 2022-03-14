@@ -47,29 +47,42 @@ public class UsersParser extends Parser {
             for(int i=0; i< freelancers.length(); i++){
                 JSONObject freelancer = freelancers.getJSONObject(i);
                 
-                String[] categories2 = freelancer.getString("categories2");
-                String country = freelancer.getString("country");
-                String description = freelancer.getString("description");
-                long feedback = freelancer.getLong("feedback");
-                LocalDate last_activity = (LocalDate) freelancer.get("last_activity"); // in type cast per comodita
-		        LocalDate member_since = (LocalDate) freelancer.get("member_since"); // in type cast per comodita
-                String name = freelancer.getString("name");
-                int portfolio_items_count = freelancer.getInt("portfolio_items_count");
-                String portrait_50 = freelancer.getString("portrait_50");
-                String profile_type = freelancer.getString("profile_type");
-                float rate = freelancer.getFloat("rate");
-                String[] skills_array = freelancer.getString("skills");
-                int test_passed_count = freelancer.getInt("test_passed_count");
-                String title = freelancer.getString("title");
-                
-                Freelancer daAggiungere = new Freelancer(categories2, country, description, feedback, 
-                                                        last_activity, member_since, name, portfolio_items_count,
-                                                        portrait_50, profile_type, rate, skills_array, test_passed_count,
-                                                        title);
-                f.add(daAggiungere);
+               JSONArray jsonArray_categories2 = (JSONArray) freelancer.get("categories2");
+             int numeroCategories2 = jsonArray_categories2.length();
+        	 String[] categories2 = new String[numeroCategories2];
 
-                int skills_count = skills_array.length();                       
-            }
+			 for(int k=0; k < numeroCategories2; k++) {
+			   categories2[k]=(String) jsonArray_categories2.get(k);
+			 }
+             String country = freelancer.getString("country");
+             String description = freelancer.getString("description");
+             long feedback = freelancer.getLong("feedback");
+             String id = freelancer.getString("id");
+             LocalDate last_activity = (LocalDate) freelancer.get("last_activity"); // in type cast per comodita
+	     LocalDate member_since = (LocalDate) freelancer.get("member_since"); // inttype cast per comodita
+             String name = freelancer.getString("name");
+             int portfolio_items_count = freelancer.getInt("portfolio_items_count");
+             String portrait_50 = freelancer.getString("portrait_50");
+             String profile_type = freelancer.getString("profile_type");
+             float rate = freelancer.getFloat("rate");  
+             JSONArray jsonArray_skills = (JSONArray) freelancer.get("skills");
+             int numeroSkills = jsonArray_skills.length();
+        	 String[] skills = new String[numeroSkills];
+
+			 for(int k=0; k < numeroSkills; k++) {
+			    skills[k]=(String) jsonArray_skills.get(k);
+			 }
+             int test_passed_count = freelancer.getInt("test_passed_count");
+             String title = freelancer.getString("title");
+             
+             Freelancer daAggiungere = new Freelancer(categories2, country, description, feedback, id, 
+                                                     last_activity, member_since, name, portfolio_items_count,
+                                                     portrait_50, profile_type, rate, skills, test_passed_count,
+                                                     title);
+             f.add(daAggiungere);
+
+             int skills_count = skills.length;                       
+         }
             return f;
         }
 
