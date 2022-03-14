@@ -29,10 +29,9 @@ public class UpworkService {
      * @return search
      */
     public JSONArray startSearch(){
-        // insert code here
-        JSONArray search = new JSONArray();
+        JSONArray responsebody = new JSONArray();
         usersRequest();
-        return search;
+        return responsebody;
     }
     /**
      * Metodo per generare le stats
@@ -41,10 +40,10 @@ public class UpworkService {
      */
     public JSONObject statsGenerator(Vector<Freelancer> f) throws StatsException{
         JSONObject stats = new JSONObject();
-        stats.put("average portfolio_items_count", this.stats.portfolioAverage(f.getFreelancers()));
-        stats.put("variance portfolio_items_count", this.stats.portfolioVariance(f.getFreelancers()));
-        stats.put("average skills", this.stats.skillAverage(f.getFreelancers()));
-        stats.put("variance skills", this.stats.skillVariance(f.getFreelancers()));
+        stats.put("average portfolio_items_count", this.stats.portfolioAverage(f));
+        stats.put("variance portfolio_items_count", this.stats.portfolioVariance(f));
+        stats.put("average skills", this.stats.skillAverage(f));
+        stats.put("variance skills", this.stats.skillVariance(f));
         return stats;
     }
     /**
@@ -55,7 +54,7 @@ public class UpworkService {
     public JSONArray feedbackFilterGenerator() throws FiltersException{
         Vector<Freelancer> f = new Vector<Freelancer>();
         JSONArray filters = new JSONArray();
-        this.filters.ordinoPerFeedback(f.getFreelancers());
+        this.filters.ordinoPerFeedback(f);
         return filters;
     }
     /**
@@ -66,7 +65,7 @@ public class UpworkService {
     public JSONArray portfolioFilterGenerator()throws FiltersException{
         Vector<Freelancer> f = new Vector<Freelancer>();
         JSONArray filters = new JSONArray();
-        this.filters.ordinoPerDimensionePortfolio(f.getFreelancers());
+        this.filters.ordinoPerDimensionePortfolio(f);
         return filters;
     }
     

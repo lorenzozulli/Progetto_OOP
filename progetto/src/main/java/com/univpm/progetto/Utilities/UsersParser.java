@@ -5,12 +5,10 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
-import java.text.SimpleDateFormat;
 import java.net.URI;
 
 import com.univpm.progetto.Models.*;
@@ -59,7 +57,7 @@ public class UsersParser extends Parser {
              long feedback = freelancer.getLong("feedback");
              String id = freelancer.getString("id");
              LocalDate last_activity = (LocalDate) freelancer.get("last_activity"); // in type cast per comodita
-	     LocalDate member_since = (LocalDate) freelancer.get("member_since"); // inttype cast per comodita
+	         LocalDate member_since = (LocalDate) freelancer.get("member_since"); // in type cast per comodita
              String name = freelancer.getString("name");
              int portfolio_items_count = freelancer.getInt("portfolio_items_count");
              String portrait_50 = freelancer.getString("portrait_50");
@@ -81,7 +79,7 @@ public class UsersParser extends Parser {
                                                      title);
              f.add(daAggiungere);
 
-             int skills_count = skills.length;                       
+             int skills_count = skills.length;               
          }
             return f;
         }

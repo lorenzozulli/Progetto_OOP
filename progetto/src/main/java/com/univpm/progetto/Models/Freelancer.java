@@ -1,10 +1,13 @@
 package com.univpm.progetto.Models;
 
 import java.time.LocalDate;
+import java.util.List;
 import java.util.Vector;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
+import java.util.HashMap;
+
 /**
  * Classe che modella in modo generale il Freelancer
  * @author Lorenzo Zulli, Giovanni Prati
@@ -352,30 +355,33 @@ public class Freelancer {
         this.title = title;
     }
     /**
-     * Metodo toString classico
+     * Metodo toJSONObject
      * @return 
      */
-    @Override
-    public String toString(){
-        // non sono sicuro che la formattazione sia questa ma al massimo si sistema abbastanza facilmente.
-    	//this.? \n?
-        return "freelancer{"+
-            "categories2"+ categories2 + '\'' +
-            ", country"+ country + '\'' +
-            ", description"+ description + '\'' +
-            ", feedback"+ feedback + '\'' +
-            ", id"+ id + '\'' +
-            ", last_activity"+ last_activity + '\'' +
-            ", member_since"+ member_since + '\'' +
-            ", name"+ name + '\'' +
-            ", portfolio_items_count"+ portfolio_items_count + '\'' +
-            ", portrait_50"+ portrait_50 + '\'' +
-            ", profile_type"+ profile_type + '\'' +
-            ", rate"+ rate + '\'' +
-            ", skills"+ skills + '\'' +
-            ", test_passed_count"+ test_passed_count + '\'' +
-            ", title"+ title + '\'' +
-            "},";
+    public JSONObject toJSONObject(){
+        JSONObject object = new JSONObject();
+        JSONArray array = new JSONArray();
+        array.add("ciao!");
+        for(int i=0; i<this.categories2.length;i++){
+            
+        }
+        object.put("country", this.country);
+        object.put("description", this.description);
+        object.put("feedback", this.feedback);
+        object.put("id", this.id);
+        object.put("last_activity", this.last_activity);
+        object.put("member_since", this.member_since);
+        object.put("name", this.name);
+        object.put("portfolio_items_count", this.portfolio_items_count);
+        object.put("portrait_50", this.portrait_50);
+        object.put("profile_type", this.profile_type);
+        object.put("rate", this.rate);
+        for(int i=0; i<this.skills.length;i++){
+            object.put("skills", this.skills);
+        }
+        object.put("test_passed_count", this.test_passed_count);
+        object.put("title", this.title);
+        return object;
     }
     
     private Vector<Freelancer> freelancers = new Vector<Freelancer>();
