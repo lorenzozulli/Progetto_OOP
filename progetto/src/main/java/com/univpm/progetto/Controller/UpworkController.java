@@ -38,7 +38,7 @@ public class UpworkController {
     @PostMapping(value = "/stats")
     public JSONObject stats(@RequestBody JSONArray body) throws StatsException{
         //inserire il codice
-        return upworkservice.statsGenerator(body);
+            return upworkservice.statsGenerator(body);
     }
    /**
     * Rotta per generare il filtro per feedback

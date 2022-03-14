@@ -13,6 +13,9 @@ import java.net.http.HttpResponse;
 import java.text.SimpleDateFormat;
 import java.net.URI;
 
+import com.univpm.progetto.Models.*;
+import java.util.Vector;
+
 /**
  * Classe per cercare gli users con la skill Java
  * @author Lorenzo Zulli, Giovanni Prati
@@ -40,7 +43,6 @@ public class UsersParser extends Parser {
          */
         public static Vector<Freelancer> parser(String responsebody){
             JSONArray freelancers = new JSONArray(responsebody);
-            DateTimeFormatter dtf = DateTimeFormatter.ofPattern("YYYY-MM-DD");
             Vector<Freelancer> f = new Vector<Freelancer>();
             for(int i=0; i< freelancers.length(); i++){
                 JSONObject freelancer = freelancers.getJSONObject(i);
@@ -49,21 +51,26 @@ public class UsersParser extends Parser {
                 String country = freelancer.getString("country");
                 String description = freelancer.getString("description");
                 long feedback = freelancer.getLong("feedback");
-                LocalDate last_activity = freelancer.getDayOfYear("last_activity"); // da fare il parsing della data
-                LocalDate member_since = freelancer.getDate("member_since"); // anche qui
+                LocalDate last_activity = (LocalDate) freelancer.get("last_activity"); // in type cast per comodita
+		        LocalDate member_since = (LocalDate) freelancer.get("member_since"); // inttype cast per comodita
                 String name = freelancer.getString("name");
                 int portfolio_items_count = freelancer.getInt("portfolio_items_count");
                 String portrait_50 = freelancer.getString("portrait_50");
                 String profile_type = freelancer.getString("profile_type");
                 float rate = freelancer.getFloat("rate");
-                JSONArray skills_array = freelancer.getJSONArray("skills");
+                String[] skills_array = freelancer.getString("skills");
                 int test_passed_count = freelancer.getInt("test_passed_count");
                 String title = freelancer.getString("title");
+                
+                Freelancer daAggiungere = new Freelancer(categories2, country, description, feedback, 
+                                                        last_activity, member_since, name, portfolio_items_count,
+                                                        portrait_50, profile_type, rate, skills_array, test_passed_count,
+                                                        title);
+                f.add(daAggiungere);
 
-                int skills_count = skills_array.length(); 
-                return      
+                int skills_count = skills_array.length();                       
             }
-            return null;
+            return f;
         }
 
         /**
