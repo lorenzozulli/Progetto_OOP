@@ -11,17 +11,18 @@ public class Parser {
         this.api_key = api_key;
     }
     /**
-     * @return String return the api_key
+     * Getter per api_key
+     * @return api_key
      */
     public String getApi_key() {
         return api_key;
     }
 
     /**
-     * @param api_key the api_key to set
+     * Setter per api_key
+     * @param api_key
      */
     public void setApi_key(String api_key) {
         this.api_key = api_key;
     }
-
 }

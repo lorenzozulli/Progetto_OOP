@@ -5,7 +5,6 @@ import com.univpm.progetto.Exceptions.FiltersException;
 import com.univpm.progetto.Exceptions.StatsException;
 import com.univpm.progetto.Models.Freelancer;
 import com.univpm.progetto.Services.UpworkService;
-import com.univpm.progetto.Utilities.UsersParser;
 
 import org.json.JSONObject;
 import org.json.JSONArray;
@@ -22,7 +21,6 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class UpworkController {
     private UpworkService upworkservice;
-    private UsersParser usersparser;
     /**
      * Rotta per iniziare la ricerca degli utenti con la skill java
      * @param body

@@ -3,7 +3,7 @@ package com.univpm.progetto.Services;
 import com.univpm.progetto.StatsandFilters.Filters;
 import com.univpm.progetto.StatsandFilters.Stats;
 import com.univpm.progetto.Models.Freelancer;
-import com.univpm.progetto.Utilities.UsersParser;
+import com.univpm.progetto.Utilities.FreelancersParser;
 
 import com.univpm.progetto.Exceptions.BadRequestException;
 import com.univpm.progetto.Exceptions.FiltersException;
@@ -22,7 +22,7 @@ public class UpworkService {
 
     private Stats stats;
     private Filters filters;
-    private UsersParser usersparser;
+    private FreelancersParser fparser;
 
     /**
      * Metodo per avviare una ricerca
@@ -30,7 +30,7 @@ public class UpworkService {
      * @throws BadRequestException
      */
     public void startSearch() throws BadRequestException{
-        this.usersparser.usersRequest();
+        this.fparser.FreelancersRequest();
     }
     /**
      * Metodo per generare le statistiche attraverso un <b>JSONObject</b>
