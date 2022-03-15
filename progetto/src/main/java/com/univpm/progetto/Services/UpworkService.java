@@ -5,6 +5,7 @@ import com.univpm.progetto.StatsandFilters.Stats;
 
 import java.util.Vector;
 
+import com.univpm.progetto.Exceptions.BadRequestException;
 import com.univpm.progetto.Exceptions.FiltersException;
 import com.univpm.progetto.Exceptions.StatsException;
 import com.univpm.progetto.Models.Freelancer;
@@ -23,15 +24,15 @@ public class UpworkService {
 
     private Stats stats;
     private Filters filters;
+    private UsersParser usersparser;
 
     /**
      * Metodo per avviare una ricerca
      * @return search
+     * @throws BadRequestException
      */
-    public JSONArray startSearch(){
-        JSONArray responsebody = new JSONArray();
-        usersRequest();
-        return responsebody;
+    public void startSearch() throws BadRequestException{
+        this.usersparser.usersRequest();
     }
     /**
      * Metodo per generare le stats

@@ -1,12 +1,10 @@
 package com.univpm.progetto.Models;
 
 import java.time.LocalDate;
-import java.util.List;
 import java.util.Vector;
 
-import org.json.JSONArray;
+import org.json.simple.JSONArray;
 import org.json.JSONObject;
-import java.util.HashMap;
 
 /**
  * Classe che modella in modo generale il Freelancer
@@ -73,6 +71,8 @@ public class Freelancer {
     /** 
      * @return JSONObject
      */
+
+    /*
     public JSONObject jsonMaker() {
     	JSONObject datiFreelancer = new JSONObject();  //creo oggetto json
     	JSONArray categories2_ = new JSONArray();  //creo elenco di json che contiene le categories
@@ -108,7 +108,8 @@ public class Freelancer {
     	JSONObject freelancer = new JSONObject();
     	freelancer.put("freelancer",datiFreelancer);
     	return freelancer;	
-    }
+    }*/
+
     /**
      * Costruttore freelancer 2
      */
@@ -360,11 +361,12 @@ public class Freelancer {
      */
     public JSONObject toJSONObject(){
         JSONObject object = new JSONObject();
-        JSONArray array = new JSONArray();
-        array.add("ciao!");
+        JSONArray arraycategories2 = new JSONArray();
+        JSONArray arrayskills = new JSONArray();        
         for(int i=0; i<this.categories2.length;i++){
-            
+            arraycategories2.add(this.categories2[i]);
         }
+        object.put("categories2", arraycategories2);
         object.put("country", this.country);
         object.put("description", this.description);
         object.put("feedback", this.feedback);
@@ -377,8 +379,9 @@ public class Freelancer {
         object.put("profile_type", this.profile_type);
         object.put("rate", this.rate);
         for(int i=0; i<this.skills.length;i++){
-            object.put("skills", this.skills);
+            arrayskills.add(this.skills[i]);
         }
+        object.put("skills", arrayskills);
         object.put("test_passed_count", this.test_passed_count);
         object.put("title", this.title);
         return object;

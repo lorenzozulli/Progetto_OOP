@@ -31,11 +31,9 @@ public class UpworkController {
      * @throws BadRequestException
      */
     @PostMapping(value = "/searchjava")
-    public Vector<Freelancer> startSearch(@RequestBody JSONObject body) throws BadRequestException{
+    public void startSearch(@RequestBody JSONObject body) throws BadRequestException{
         //inserire il codice
-        Vector<Freelancer> f = new Vector<Freelancer>();
-        this.usersparser.usersRequest();
-        return f;
+        System.out.println(upworkservice.startSearch());
     }
     /**
      * Rotta per generare le statistiche
