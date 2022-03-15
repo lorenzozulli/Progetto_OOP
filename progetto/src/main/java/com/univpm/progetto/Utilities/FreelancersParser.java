@@ -36,6 +36,7 @@ public class FreelancersParser extends Parser {
         client.sendAsync(request, HttpResponse.BodyHandlers.ofString()) // richiesta asincrona al client
                 .thenApply(HttpResponse::body) // applica la risposta al body
                 .thenApply(FreelancersParser::parser) // parsing del conenuto
+                .thenAccept(System.out::println)
                 .join();
     }
     

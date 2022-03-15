@@ -22,7 +22,7 @@ public class UpworkService {
 
     private Stats stats;
     private Filters filters;
-    private FreelancersParser fparser;
+    private FreelancersParser fParser;
 
     /**
      * Metodo per avviare una ricerca
@@ -30,7 +30,7 @@ public class UpworkService {
      * @throws BadRequestException
      */
     public void startSearch() throws BadRequestException{
-        this.fparser.FreelancersRequest();
+        this.fParser.FreelancersRequest();
     }
     /**
      * Metodo per generare le statistiche attraverso un <b>JSONObject</b>
