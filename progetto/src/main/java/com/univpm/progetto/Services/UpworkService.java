@@ -2,18 +2,16 @@ package com.univpm.progetto.Services;
 
 import com.univpm.progetto.StatsandFilters.Filters;
 import com.univpm.progetto.StatsandFilters.Stats;
-
-import java.util.Vector;
+import com.univpm.progetto.Models.Freelancer;
+import com.univpm.progetto.Utilities.UsersParser;
 
 import com.univpm.progetto.Exceptions.BadRequestException;
 import com.univpm.progetto.Exceptions.FiltersException;
 import com.univpm.progetto.Exceptions.StatsException;
-import com.univpm.progetto.Models.Freelancer;
-//import com.univpm.progetto.Models.Users;
-import com.univpm.progetto.Utilities.UsersParser;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
+import java.util.Vector;
 
 /**
  * Classe contente i metodi del servizio del programma
@@ -35,7 +33,7 @@ public class UpworkService {
         this.usersparser.usersRequest();
     }
     /**
-     * Metodo per generare le stats
+     * Metodo per generare le statistiche attraverso un <b>JSONObject</b>
      * @return stats
      * @throws StatsException
      */
@@ -48,7 +46,7 @@ public class UpworkService {
         return stats;
     }
     /**
-     * Metodi per generare il filtro per feedback
+     * Metodo per generare il filtro per <b>feedback</b>
      * @return filters
      * @throws FiltersException
      */
@@ -59,7 +57,7 @@ public class UpworkService {
         return filters;
     }
     /**
-     * Metodo per generare il filtro per dimensione del portfolio
+     * Metodo per generare il filtro per <b>portfolio_items_count</b>
      * @return filters
      * @throws FiltersException
      */

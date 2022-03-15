@@ -1,23 +1,22 @@
 package com.univpm.progetto.Controller;
 
-import java.util.Vector;
-
 import com.univpm.progetto.Exceptions.BadRequestException;
 import com.univpm.progetto.Exceptions.FiltersException;
 import com.univpm.progetto.Exceptions.StatsException;
 import com.univpm.progetto.Models.Freelancer;
-import com.univpm.progetto.Models.Users;
 import com.univpm.progetto.Services.UpworkService;
 import com.univpm.progetto.Utilities.UsersParser;
 
 import org.json.JSONObject;
 import org.json.JSONArray;
+import java.util.Vector;
+
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
- * Controller del programma
+ * Classe che contiene i metodi del controller 
  * @author Lorenzo Zulli, Giovanni Prati
  */
 @RestController
@@ -25,7 +24,7 @@ public class UpworkController {
     private UpworkService upworkservice;
     private UsersParser usersparser;
     /**
-     * Rotta per iniziare la ricerca degli utenti con la skill "java"
+     * Rotta per iniziare la ricerca degli utenti con la skill java
      * @param body
      * @return
      * @throws BadRequestException
@@ -38,7 +37,7 @@ public class UpworkController {
     /**
      * Rotta per generare le statistiche
      * @param body
-     * @return
+     * @return JSONObject contente le statistiche
      * @throws StatsException
      */
     @PostMapping(value = "/stats")
@@ -49,7 +48,7 @@ public class UpworkController {
    /**
     * Rotta per generare il filtro per feedback
     * @param body
-    * @return
+    * @return JSONArray ordinato per <b>feedback</b>
     * @throws FiltersException
     */
     @PostMapping(value = "/filters/feedback")
@@ -60,7 +59,7 @@ public class UpworkController {
     /**
      * Rotta per generare il filtro per dimensione del portfolio
      * @param body
-     * @return
+     * @return JSONArray ordinato per <b>portfolio_items_count</b>
      * @throws FiltersException
      */
     @PostMapping(value = "/filters/portfolio")

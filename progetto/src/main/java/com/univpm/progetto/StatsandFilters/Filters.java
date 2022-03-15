@@ -10,7 +10,7 @@ import java.util.Vector;
 
 public class Filters {
     /**
-	 * Metodo per ordinare gli users con la skill Java per feedback in ordine crescente (quicksort)
+	 * Quicksort per ordinare i freelancers in base al <b>feedback</b>, in ordine crescente
 	 * @param users
 	 */
 	public void ordinoPerFeedback(Vector<Freelancer> users,int lowIndex,int highIndex) {
@@ -24,13 +24,15 @@ public class Filters {
 	    ordinoPerFeedback(users,lowIndex,leftPointer - 1);
 	    ordinoPerFeedback(users,leftPointer + 1,highIndex);
     }
-	
-	//@Overloading
+	/**
+	 * Metodo di supporto a <b>ordinoPerFeedback</b>
+	 * @param users
+	 */
 	public void ordinoPerFeedback(Vector<Freelancer> users) {
 		ordinoPerFeedback(users,0,users.size()-1);
 	}
 	/**
-	 * Metodo per ordinare gli userso con la skill Java per dimensione del portfolio in ordine crescente (quicksort)
+	 * Quicksort per ordinare i freelancers in base al <b>portfolio_items_count</b>, in ordine crescente
 	 * @param users
 	 * @param lowIndex
 	 * @param highIndex
@@ -47,12 +49,15 @@ public class Filters {
 		ordinoPerDimensionePortfolio(users,leftPointer + 1,highIndex);
 	}
 	
-	//@OverLoading
+	/**
+	 * Metodo di supporto a <b>ordinoPerDimensionePortfolio</b>
+	 * @param users
+	 */
 	public void ordinoPerDimensionePortfolio(Vector<Freelancer> users) {
 		ordinoPerDimensionePortfolio(users,0,users.size()-1);
 	}
 	/**
-	 * Metodo di supporto per l'ordinamento
+	 * Metodo di supporto a <b>ordinoPerFeedback</b> per effettuare il partizionamento
 	 * @param users
 	 * @param lowIndex
 	 * @param highIndex
@@ -84,7 +89,7 @@ public class Filters {
           return leftPointer;		
     }
 	/**
-	 * Metodo di supporto per l'ordinamento
+	 * Metodo di supporto a <b>ordinoPerDimensionePortfolio</b> per effettuare il partizionamento
 	 * @param users
 	 * @param lowIndex
 	 * @param highIndex

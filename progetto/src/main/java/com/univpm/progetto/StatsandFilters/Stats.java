@@ -5,14 +5,14 @@ import com.univpm.progetto.Models.Freelancer;
 import java.util.Vector;
 
 /**
- * Classe per ottenere le statistiche legate agli utenti
+ * Classe per ottenere le statistiche relative ai freelancers
  * @author Lorenzo Zulli, Giovanni Prati
  */
 
 public class Stats{
     /**
-     * Metodo per ottenere la media di progetti nel portfolio degli utenti con la skill "Java"
-     * @return Media del numero di progetti nel portfolio
+     * Metodo per ottenere la media di progetti nel portfolio
+     * @return Media di <b>portfolio_items_count</b>
      * @param users
      */
     public double portfolioAverage(Vector<Freelancer> users){
@@ -22,8 +22,8 @@ public class Stats{
         return (sumportfolioitems/users.size());
     }
     /**
-     * Metodo per ottenere la varianza di progetti nel portfolio degli utenti con la skill "Java"
-     * @return Varianza del numero di progetti nel portfolio
+     * Metodo per ottenere la varianza di progetti nel portfolio 
+     * @return Varianza di <b>portfolio_items_count</b>
      * @param users
      */
     public double portfolioVariance(Vector<Freelancer> users){
@@ -36,8 +36,8 @@ public class Stats{
         return (g/users.size());
     }
     /**
-     * Metodo per ottenere la media del numero di skill degli utenti con la skill "Java"
-     * @return Media del numero di skill
+     * Metodo per ottenere la media del numero di skill
+     * @return Media del numero di <b>skills</b>
      * @param users
      */
     public double skillAverage(Vector<Freelancer> users){
@@ -50,8 +50,8 @@ public class Stats{
         return (sumskills/users.size());
     }
     /**
-     * Metodo per ottenere la varianza di numero di skill degli utenti con la skill "Java"
-     * @return Varianza del numero di skill
+     * Metodo per ottenere la varianza di numero di skill
+     * @return Varianza del numero di <b>skills</b>
      * @param users
      */
     public double skillVariance(Vector<Freelancer> users){

@@ -1,22 +1,12 @@
 package com.univpm.progetto.Exceptions;
 /**
- *  Classe che...
+ *  Classe che descrive l'eccezione durante i metodi legati al calcolo delle statistiche
  *  @author Lorenzo Zulli, Giovanni Prati
  */
 
 public class StatsException extends Exception {
-
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
 	
 	public StatsException() {
-		super();
+		super("ERRORE(Stats): operazione non andata a buon fine!");
 	}
-	
-	public StatsException(String message) {
-		super(message);
-	}
-
 }

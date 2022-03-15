@@ -1,22 +1,13 @@
 package com.univpm.progetto.Exceptions;
 /**
- *  Classe che descrive l'eccezione nel caso in cui ..
+ *  Classe che descrive l'eccezione durante i metodi legati ai filtri
  *  @author Lorenzo Zulli, Giovanni Prati
  */
 
 public class FiltersException extends Exception {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 	public FiltersException() {
-		super();
+		super("ERRORE(Filters): operazione non andata a buon fine!");
 	}
-	
-	public FiltersException(String message) {
-		super(message);
-	}
-
-
 }
