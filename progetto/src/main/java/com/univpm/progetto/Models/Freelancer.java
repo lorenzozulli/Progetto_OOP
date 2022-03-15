@@ -1,7 +1,6 @@
 package com.univpm.progetto.Models;
 
 import java.time.LocalDate;
-import java.util.Vector;
 
 import org.json.simple.JSONArray;
 import org.json.JSONObject;
@@ -66,66 +65,15 @@ public class Freelancer {
         this.title = title;       
     }
     
-
-    
-    /** 
-     * @return JSONObject
-     */
-
-    /*
-    public JSONObject jsonMaker() {
-    	JSONObject datiFreelancer = new JSONObject();  //creo oggetto json
-    	JSONArray categories2_ = new JSONArray();  //creo elenco di json che contiene le categories
-    	JSONArray skills_ = new JSONArray();  //creo elenco di json che contiene le skills
-    	//aggiungo le categories2 nel JSONArray categories2_
-    	//SEMPLIFICAZIONE: ogni freelancer avrà 3 stringhe nell'array categories2
-    	categories2_.put(0, categories2[0]);  
-    	categories2_.put(1, categories2[1]);  
-    	categories2_.put(2, categories2[2]);  
-    	datiFreelancer.put("categories2", categories2);  //aggiungo categories2_ nel JSONObject datiFreelancer
-    	datiFreelancer.put("country", country);  
-    	datiFreelancer.put("description", description);
-    	datiFreelancer.put("feedback", feedback);
-    	datiFreelancer.put("id", id);
-    	datiFreelancer.put("last_activity", last_activity);
-    	datiFreelancer.put("member_since", member_since);
-    	datiFreelancer.put("name", name);
-    	datiFreelancer.put("portfolio_items_count", portfolio_items_count);
-    	datiFreelancer.put("portrait_50", portrait_50);
-    	datiFreelancer.put("profile_type", profile_type);
-    	datiFreelancer.put("rate", rate);
-    	//SEMPLIFICAZIONE: ogni freelancer avrà 6 stringhe nell'array skills
-    	skills_.put(0, skills[0]);  
-    	skills_.put(1, skills[1]);  
-    	skills_.put(2, skills[2]); 
-    	skills_.put(3, skills[3]); 
-    	skills_.put(4, skills[4]); 
-    	skills_.put(5, skills[5]); 
-    	datiFreelancer.put("skills", skills);
-    	datiFreelancer.put("test_passed_count", test_passed_count);
-    	datiFreelancer.put("title", title);
-
-    	JSONObject freelancer = new JSONObject();
-    	freelancer.put("freelancer",datiFreelancer);
-    	return freelancer;	
-    }*/
-
     /**
-     * Costruttore freelancer 2
+     * Costruttore vuoto per il metodo di swap per i filters
      */
-    
-    /*public Freelancer(JSONObject freelancer){
-        this.portfolio_items_count = Integer.parseInt(freelancer.get("portfolio_items_count").toString());
-        this.feedback = Long.parseLong(freelancer.get("feedback").toString());
-    }*/
-    
-    // Empty Constructor 
     public Freelancer(){
 
     }
-    
-    
+        
     /** 
+     * Metodo di supporto per "swap"
      * @param daCopiare
      */
     public void copia(Freelancer daCopiare) {
@@ -147,217 +95,247 @@ public class Freelancer {
     }
    
     /**
-     * @return Ritorna le "categories2"
+     * Getter per categories2
+     * @return categories2
      */
     public String[] getCategories2() {
         return categories2;
     }
 
     /**
-     * @param categories2 the categories2 to set
+     * Setter per categories2
+     * @param categories2
      */
     public void setCategories2(String[] categories2) {
         this.categories2 = categories2;
     }
 
     /**
-     * @return Ritorna le "country"
+     * Getter per country
+     * @return country
      */
     public String getCountry() {
         return country;
     }
 
     /**
-     * @param country the country to set
+     * Setter per country
+     * @param country 
      */
     public void setCountry(String country) {
         this.country = country;
     }
 
     /**
-     * @return Ritorna le "description"
+     * Getter per description
+     * @return description
      */
     public String getDescription() {
         return description;
     }
 
     /**
-     * @param description the description to set
+     * Setter per description
+     * @param description 
      */
     public void setDescription(String description) {
         this.description = description;
     }
 
     /**
-     * @return Ritorna i "feedback"
+     * Getter per feedback
+     * @return feedback
      */
     public Long getFeedback() {
         return feedback;
     }
 
     /**
-     * @param feedback the feedback to set
+     * Stetter per feedback
+     * @param feedback 
      */
     public void setFeedback(Long feedback) {
         this.feedback = feedback;
     }
 
     /**
-     * @return Ritorna gli "id"
+     * Getter per id
+     * @return id
      */
     public String getId() {
         return id;
     }
 
     /**
-     * @param id the id to set
+     * Setter per id
+     * @param id 
      */
     public void setId(String id) {
         this.id = id;
     }
 
     /**
-     * @return Ritorna le "last_activity"
+     * Getter per last_activity
+     * @return last_activity
      */
     public LocalDate getLast_activity() {
         return last_activity;
     }
 
     /**
-     * @param last_activity the last_activity to set
+     * Setter per last_activity
+     * @param last_activity
      */
     public void setLast_activity(LocalDate last_activity) {
         this.last_activity = last_activity;
     }
 
     /**
-     * @return Ritorna le "member_since"
+     * Getter per member_since
+     * @return member_since
      */
     public LocalDate getMember_since() {
         return member_since;
     }
 
     /**
-     * @param member_since the member_since to set
+     * Setter per member_since
+     * @param member_since 
      */
     public void setMember_since(LocalDate member_since) {
         this.member_since = member_since;
     }
 
     /**
-     * @return Ritorna il "name"
+     * Getter per name
+     * @return name
      */
     public String getName() {
         return name;
     }
 
     /**
-     * @param name the name to set
+     * Setter per name
+     * @param name 
      */
     public void setName(String name) {
         this.name = name;
     }
 
     /**
-     * @return Ritorna il "portfolio_items_count"
+     * Getter per portfolio_items_count
+     * @return portfolio_items_count
      */
     public int getPortfolio_items_count() {
         return portfolio_items_count;
     }
 
     /**
-     * @param portfolio_items_count the portfolio_items_count to set
+     * Setter perportfolio_items_count
+     * @param portfolio_items_count
      */
     public void setPortfolio_items_count(int portfolio_items_count) {
         this.portfolio_items_count = portfolio_items_count;
     }
 
     /**
-     * @return String Ritorna i portrait_50
+     * Getter per portrait_50
+     * @return portrait_50
      */
     public String getPortrait_50() {
         return portrait_50;
     }
 
     /**
-     * @param portrait_50 the portrait_50 to set
+     * Setter per portrait_50
+     * @param portrait_50
      */
     public void setPortrait_50(String portrait_50) {
         this.portrait_50 = portrait_50;
     }
 
     /**
-     * @return String return the profile_type
+     * Getter per profile_type
+     * @return profile_type
      */
     public String getProfile_type() {
         return profile_type;
     }
 
     /**
-     * @param profile_type the profile_type to set
+     * Setter per profile_type
+     * @param profile_type
      */
     public void setProfile_type(String profile_type) {
         this.profile_type = profile_type;
     }
 
     /**
-     * @return int return the rate
+     * Getter per rate
+     * @return rate
      */
     public float getRate() {
         return rate;
     }
 
     /**
-     * @param rate the rate to set
+     * Setter per rate
+     * @param rate
      */
     public void setRate(float rate) {
         this.rate = rate;
     }
 
     /**
-     * @return String[] return the skills
+     * Getter per skills
+     * @return skills
      */
     public String[] getSkills() {
         return skills;
     }
 
     /**
-     * @param skills the skills to set
+     * Setter per skills
+     * @param skills
      */
     public void setSkills(String[] skills) {
         this.skills = skills;
     }
 
     /**
-     * @return int return the test_passed_count
+     * Getter per test_passed_count
+     * @return test_passed_count
      */
     public int getTest_passed_count() {
         return test_passed_count;
     }
 
     /**
-     * @param test_passed_count the test_passed_count to set
+     * Setter per test_passed_count
+     * @param test_passed_count 
      */
     public void setTest_passed_count(int test_passed_count) {
         this.test_passed_count = test_passed_count;
     }
 
     /**
-     * @return String return the title
+     * Getter per title
+     * @return title
      */
     public String getTitle() {
         return title;
     }
 
     /**
-     * @param title the title to set
+     * Setter per title
+     * @param title 
      */
     public void setTitle(String title) {
         this.title = title;
     }
     /**
      * Metodo toJSONObject
-     * @return 
+     * @return object
      */
     public JSONObject toJSONObject(){
         JSONObject object = new JSONObject();
@@ -385,14 +363,5 @@ public class Freelancer {
         object.put("test_passed_count", this.test_passed_count);
         object.put("title", this.title);
         return object;
-    }
-    
-    private Vector<Freelancer> freelancers = new Vector<Freelancer>();
-
-    public Vector<Freelancer> getFreelancers(){
-        return freelancers;
-    }
-    public void setFreelancers(Vector<Freelancer> freelancers){
-        this.freelancers = freelancers;
     }
 }
