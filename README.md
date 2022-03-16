@@ -116,7 +116,7 @@ Tramite questa rotta andiamo a generare i seguenti filtri attraverso le seguenti
 ]
 ```
 # Javadoc
-Attraverso i commenti "Javadoc" che mette a disposizione java stesso siamo riusciti a creare una documentazione dettagliata di tutte le classi e di diversi metodi, di seguito il link: [Javadoc del progetto](https://www.youtube.com/watch?v=dQw4w9WgXcQ)
+Attraverso i commenti "Javadoc" che mette a disposizione Java stesso siamo riusciti a creare una documentazione dettagliata di tutte le classi e di diversi metodi, di seguito il link: [Javadoc del progetto](https://www.youtube.com/watch?v=dQw4w9WgXcQ)
 
 # Software utilizzati
 * [Eclipse](https://www.eclipse.org/downloads/) - Ambiente di sviluppo (Giovanni Prati).
@@ -124,3 +124,7 @@ Attraverso i commenti "Javadoc" che mette a disposizione java stesso siamo riusc
 * [Maven](https://maven.apache.org/) - Gestione del progetto.
 * [Spring Boot](https://spring.io/projects/spring-boot) - Framework per lo sviluppo dell'applicazione Java.
 * [Postman](https://www.postman.com/) - Ambiente per effettuare richieste all'API.
+
+# Autori
+* Lorenzo Zulli: [Github](https://github.com/lorenzozulli)
+* Giovanni prati: [Github](https://github.com/jjohnnyUtah)
