@@ -154,7 +154,7 @@ public class Freelancer {
      * Setter per feedback
      * @param feedback 
      */
-    public void setFeedback(Long feedback) {
+    public void setFeedback(double feedback) {
         this.feedback = feedback;
     }
 
