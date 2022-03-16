@@ -3,15 +3,15 @@ package com.univpm.progetto.TestStatsandFilters;
 import static org.junit.jupiter.api.Assertions.*;
 import java.util.Vector;
 
+import org.junit.gen5.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import com.univpm.progetto.Models.Freelancer;
 import com.univpm.progetto.StatsandFilters.Stats;
 
 class TestStats {
-
-	@Test
-	void test() {
+	@BeforeEach
+	void setUp(){
 		Stats test = new Stats();
 		Vector<Freelancer> users = new Vector<Freelancer>();
 		
@@ -23,6 +23,10 @@ class TestStats {
 		freelancer1.setPortfolio_items_count(30);
 		freelancer2.setPortfolio_items_count(25);
 
+	}
+
+	@Test
+	void test() {
 		users.add(freelancer0);
 		users.add(freelancer1);
 		users.add(freelancer2);
