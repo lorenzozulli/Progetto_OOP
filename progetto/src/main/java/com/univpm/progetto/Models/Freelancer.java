@@ -14,7 +14,7 @@ public class Freelancer {
     private String[] categories2;
     private String country;
     private String description;
-    private Long feedback;
+    private double feedback;
     private String id;
     private LocalDate last_activity;
     private LocalDate member_since;
@@ -44,7 +44,7 @@ public class Freelancer {
      * @param test_passed_count Numero di test passati 
      * @param title Titolo del profilo del freelancer
      */
-    public Freelancer(String[] categories2, String country, String description, Long feedback,
+    public Freelancer(String[] categories2, String country, String description, double feedback,
                       String id, LocalDate last_activity, LocalDate member_since, String name,
                       int portfolio_items_count, String portrait_50, String profile_type, float rate,
                       String[] skills, int test_passed_count, String title){
@@ -146,12 +146,12 @@ public class Freelancer {
      * Getter per feedback
      * @return feedback
      */
-    public Long getFeedback() {
+    public double getFeedback() {
         return feedback;
     }
 
     /**
-     * Stetter per feedback
+     * Setter per feedback
      * @param feedback 
      */
     public void setFeedback(Long feedback) {
