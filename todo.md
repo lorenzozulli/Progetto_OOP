@@ -1,7 +1,7 @@
-- [ ] Vettore di Freelancers per le varie operazioni
+- [X] Vettore di Freelancers per le varie operazioni
 - [ ] Collegamento del tutto
 - [ ] Avere la API key
-- [ ] Sistemare il codice, pulirlo
-- [ ] Aggiungere eccezioni
+- [X] Sistemare il codice, pulirlo
+- [X] Aggiungere eccezioni
 - [ ] Javadoc
 - [ ] Aggiornare link README.md
