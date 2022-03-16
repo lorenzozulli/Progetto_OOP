@@ -1,4 +1,4 @@
-package com.univpm.progetto.StatsandFilters;
+package com.univpm.progetto.TestStatsandFilters;
 
 import static org.junit.jupiter.api.Assertions.*;
 import java.util.Vector;
@@ -6,8 +6,9 @@ import java.util.Vector;
 import org.junit.jupiter.api.Test;
 
 import com.univpm.progetto.Models.Freelancer;
+import com.univpm.progetto.StatsandFilters.Stats;
 
-class StatsTest {
+class TestStats {
 
 	@Test
 	void test() {
