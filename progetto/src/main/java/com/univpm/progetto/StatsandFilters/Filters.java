@@ -16,7 +16,7 @@ public class Filters {
 	public void ordinoPerFeedback(Vector<Freelancer> users,int lowIndex,int highIndex) {
 		if (lowIndex >= highIndex) return; //se abbiamo a che fare con un vettore unitario o abbiamo terminato
 		int pivotIndex = highIndex/2;
-		long pivotValue = users.get(pivotIndex).getFeedback();
+		double pivotValue = users.get(pivotIndex).getFeedback();
 		swap(users,pivotIndex,highIndex);
 		
 		int leftPointer = partizionamentoPerFeedback(users,lowIndex,highIndex,pivotValue);
@@ -63,7 +63,7 @@ public class Filters {
 	 * @param highIndex
 	 * @param pivotValue
 	 */
-	public int partizionamentoPerFeedback(Vector<Freelancer> users,int lowIndex,int highIndex,long pivotValue) {
+	public int partizionamentoPerFeedback(Vector<Freelancer> users,int lowIndex,int highIndex,double pivotValue) {
         int leftPointer = lowIndex;
         int rightPointer = highIndex - 1;
         while (leftPointer < rightPointer) {
