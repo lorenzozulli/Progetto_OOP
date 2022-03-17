@@ -4,6 +4,7 @@ import com.univpm.progetto.Models.Freelancer;
 
 import java.util.Vector;
 
+
 /**
  * Classe per ottenere le statistiche relative ai freelancers
  * @author Lorenzo Zulli, Giovanni Prati
@@ -42,10 +43,8 @@ public class Stats{
      */
     public double skillAverage(Vector<Freelancer> users){
         double sumskills = 0;
-        String[] skillsperfreelancer;
         for (Freelancer s : users){
-            skillsperfreelancer = s.getSkills();
-            sumskills += skillsperfreelancer.length;
+            sumskills += s.getSkills().length;
         }
         return (sumskills/users.size());
     }
@@ -55,14 +54,13 @@ public class Stats{
      * @param users
      */
     public double skillVariance(Vector<Freelancer> users){
-        double k, g=0, sumskills = 0;
-        String[] skillsperfreelancer;
+        double k=0, g=0;
+        //sumskills = 0;
         for (Freelancer s : users) {
             // per prendere il numero di skills
-            skillsperfreelancer = s.getSkills();
-            sumskills += skillsperfreelancer.length;
+            // sumskills += s.getSkills().length;
             // calcolo della varianza
-            k = sumskills - skillAverage(users);
+            k = s.getSkills().length - skillAverage(users);
             g += k*k;
         }
         return (g/users.size());

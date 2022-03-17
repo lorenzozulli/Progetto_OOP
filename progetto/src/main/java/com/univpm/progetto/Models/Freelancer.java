@@ -291,7 +291,7 @@ public class Freelancer {
      * @return skills
      */
     public String[] getSkills() {
-        return skills;
+        return this.skills;
     }
 
     /**
