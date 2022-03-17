@@ -16,8 +16,8 @@ public class Freelancer {
     private String description;
     private double feedback;
     private String id;
-    private LocalDate last_activity;
-    private LocalDate member_since;
+    private String last_activity; // usiamo string in quanto non dobbiamo farci operazioni
+    private String member_since; // usiamo string in quanto non dobbiamo farci operazioni
     private String name;
     private int portfolio_items_count;
     private String portrait_50;
@@ -45,7 +45,7 @@ public class Freelancer {
      * @param title Titolo del profilo del freelancer
      */
     public Freelancer(String[] categories2, String country, String description, double feedback,
-                      String id, LocalDate last_activity, LocalDate member_since, String name,
+                      String id, String last_activity, String member_since, String name,
                       int portfolio_items_count, String portrait_50, String profile_type, float rate,
                       String[] skills, int test_passed_count, String title){
         this.categories2 = categories2;
@@ -178,7 +178,7 @@ public class Freelancer {
      * Getter per last_activity
      * @return last_activity
      */
-    public LocalDate getLast_activity() {
+    public String getLast_activity() {
         return last_activity;
     }
 
@@ -186,7 +186,7 @@ public class Freelancer {
      * Setter per last_activity
      * @param last_activity
      */
-    public void setLast_activity(LocalDate last_activity) {
+    public void setLast_activity(String last_activity) {
         this.last_activity = last_activity;
     }
 
