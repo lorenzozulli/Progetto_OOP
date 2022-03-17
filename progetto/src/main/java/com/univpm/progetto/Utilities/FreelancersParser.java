@@ -6,10 +6,12 @@ import org.json.JSONObject;
 import java.util.Vector;
 import java.time.LocalDate;
 
+/*
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 import java.net.URI;
+*/
 
 import com.univpm.progetto.Models.Freelancer;
 
@@ -26,10 +28,7 @@ public class FreelancersParser extends Parser {
     public FreelancersParser(String api_key) {
         super(api_key);
     }
-
-    /**
-     * Metodo per effettuare la richiesta HTTP ad Upwork
-     */
+    /*
     public void FreelancersRequest() {
         HttpClient client = HttpClient.newHttpClient(); // creo il client
         HttpRequest request = HttpRequest.newBuilder().uri(URI.create(this.URLGenerator())).build(); // creo la richesta con il link di URLGenerator
@@ -38,8 +37,7 @@ public class FreelancersParser extends Parser {
                 .thenApply(FreelancersParser::parser) // parsing del conenuto
                 .thenAccept(System.out::println)
                 .join();
-    }
-    
+    }*/
 
     /**
      * Metodo per effettuare il parsing dei Freelancers
@@ -95,6 +93,7 @@ public class FreelancersParser extends Parser {
      * 
      * @return URL
      */
+    /*
     public String URLGenerator() {
         String URL = "https://upwork.com/api/profiles/v2/search/"; // entry point della documentazione
         URL += ("jobs.json?q=");
@@ -103,7 +102,7 @@ public class FreelancersParser extends Parser {
         URL += ("&oauth_params=");
         URL += ("xxxxx"); // per cambiare il parametro di autenticazione
         return URL;
-    }
+    }*/
     // link per prendere la gente con la skill java
     // https://www.upwork.com/api/profiles/v2/search/jobs.json?q=java&callback=?&oauth_params=xxxxx
 }
