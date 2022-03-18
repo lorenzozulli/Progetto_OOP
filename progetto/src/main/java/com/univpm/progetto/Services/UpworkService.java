@@ -9,7 +9,7 @@ import com.univpm.progetto.Exceptions.BadRequestException;
 import com.univpm.progetto.Exceptions.FiltersException;
 import com.univpm.progetto.Exceptions.StatsException;
 
-import org.json.JSONArray;
+import org.json.simple.JSONArray;
 import org.json.JSONObject;
 import java.util.Vector;
 
@@ -30,7 +30,7 @@ public class UpworkService {
      * @throws BadRequestException
      */
     public void startSearch() throws BadRequestException{
-        this.fParser.FreelancersRequest();
+        this.fParser.parser();
     }
     /**
      * Metodo per generare le statistiche attraverso un <b>JSONObject</b>
