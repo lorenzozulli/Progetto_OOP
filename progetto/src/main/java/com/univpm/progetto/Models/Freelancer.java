@@ -154,7 +154,7 @@ public class Freelancer {
      * Setter per feedback
      * @param feedback 
      */
-    public void setFeedback(Long feedback) {
+    public void setFeedback(double feedback) {
         this.feedback = feedback;
     }
 
@@ -194,7 +194,7 @@ public class Freelancer {
      * Getter per member_since
      * @return member_since
      */
-    public LocalDate getMember_since() {
+    public String getMember_since() {
         return member_since;
     }
 
@@ -202,7 +202,7 @@ public class Freelancer {
      * Setter per member_since
      * @param member_since 
      */
-    public void setMember_since(LocalDate member_since) {
+    public void setMember_since(String member_since) {
         this.member_since = member_since;
     }
 
