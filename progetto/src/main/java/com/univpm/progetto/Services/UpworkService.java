@@ -29,8 +29,14 @@ public class UpworkService {
      * @return search
      * @throws BadRequestException
      */
-    public void startSearch() throws BadRequestException{
-        this.fParser.parser();
+    public JSONArray searchJava() throws BadRequestException{
+        Vector<Freelancer> f = new Vector<Freelancer>();
+        f = this.fParser.parser();
+        JSONArray ja = new JSONArray();
+        for(Freelancer s : f){
+            ja.add(s.toJSONObject());
+        }
+        return ja;
     }
     /**
      * Metodo per generare le statistiche attraverso un <b>JSONObject</b>

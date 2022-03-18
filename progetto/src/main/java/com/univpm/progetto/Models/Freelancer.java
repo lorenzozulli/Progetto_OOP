@@ -1,6 +1,5 @@
 package com.univpm.progetto.Models;
 
-import java.time.LocalDate;
 import java.util.Vector;
 
 import org.json.simple.JSONArray;
@@ -341,7 +340,8 @@ public class Freelancer {
     public JSONObject toJSONObject(){
         JSONObject object = new JSONObject();
         JSONArray arraycategories2 = new JSONArray();
-        JSONArray arrayskills = new JSONArray();        
+        JSONArray arrayskills = new JSONArray();
+               
         for(int i=0; i<this.categories2.length;i++){
             arraycategories2.add(this.categories2[i]);
         }

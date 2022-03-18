@@ -1,5 +1,4 @@
 package com.univpm.progetto.Utilities;
-//import com.Upwork.api.Routers.Freelancers.Search;
 
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
@@ -9,32 +8,14 @@ import org.json.simple.parser.ParseException;
 import java.io.FileReader;
 import java.io.IOException;
 
-/*
-import java.net.http.HttpClient;
-import java.net.http.HttpRequest;
-import java.net.http.HttpResponse;
-import java.net.URI;
-*/
-
 import com.univpm.progetto.Models.Freelancer;
 
 /**
- * Classe che effettua la richiesta HTTP e fa il parsing
+ * Classe che effettua la richiesta HTTP(nel nostro caso simulata attraverso il file JSON) e fa il parsing
  * 
  * @author Lorenzo Zulli, Giovanni Prati
  */
 public class FreelancersParser {
-    /*
-    public void FreelancersRequest() {
-        HttpClient client = HttpClient.newHttpClient(); // creo il client
-        HttpRequest request = HttpRequest.newBuilder().uri(URI.create(this.URLGenerator())).build(); // creo la richesta con il link di URLGenerator
-        client.sendAsync(request, HttpResponse.BodyHandlers.ofString()) // richiesta asincrona al client
-                .thenApply(HttpResponse::body) // applica la risposta al body
-                .thenApply(FreelancersParser::parser) // parsing del conenuto
-                .thenAccept(System.out::println)
-                .join();
-    }*/
-
     /**
      * Metodo per effettuare il parsing dei Freelancers
      * 
@@ -44,8 +25,10 @@ public class FreelancersParser {
     public Vector<Freelancer> parser() {
         JSONParser parser = new JSONParser();
         Vector<Freelancer> f = new Vector<Freelancer>();
+
         try (FileReader reader = new FileReader("DB.json")) {
             JSONArray freelancers = (JSONArray) parser.parse(reader);
+            
             for (int i = 0; i < freelancers.size(); i++) {
                 JSONObject freelancer = (JSONObject) freelancers.get(i);
 
@@ -71,9 +54,14 @@ public class FreelancersParser {
                 JSONArray jsonArray_skills = (JSONArray) freelancer.get("skills");
                 int numeroSkills = jsonArray_skills.size();
                 String[] skills = new String[numeroSkills];
+                boolean javacheck = false;
                     for (int k = 0; k < numeroSkills; k++) {
                         skills[k] = (String) jsonArray_skills.get(k);
+                        if (skills[k].equals("java"))
+                            javacheck = true;
                     }
+                    if(!javacheck)
+                     continue;
 
                 int test_passed_count = Integer.parseInt((String) freelancer.get("test_passed_count")); 
                 String title = (String) freelancer.get("title");
@@ -91,22 +79,4 @@ public class FreelancersParser {
         }
         return f;
     }
-
-    /**
-     * Metodo per generare l'URL desiderato
-     * 
-     * @return URL
-     */
-    /*
-    public String URLGenerator() {
-        String URL = "https://upwork.com/api/profiles/v2/search/"; // entry point della documentazione
-        URL += ("jobs.json?q=");
-        URL += ("java"); // per cambiare la skill da cercare
-        URL += ("&callback=?");
-        URL += ("&oauth_params=");
-        URL += ("xxxxx"); // per cambiare il parametro di autenticazione
-        return URL;
-    }*/
-    // link per prendere la gente con la skill java
-    // https://www.upwork.com/api/profiles/v2/search/jobs.json?q=java&callback=?&oauth_params=xxxxx
 }

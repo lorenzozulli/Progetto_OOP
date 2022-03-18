@@ -45,6 +45,34 @@
         "profile_type": "Independent",
         "rate": "22.22",
         "skills": [
+            "c++",
+            "python",
+            "mongodb",
+            "jquery",
+            "html5",
+            "postgresql"
+        ],
+        "test_passed_count": "3",
+        "title": "Web Developer"
+    },
+    {
+        "categories2": [
+            "Legal",
+            "Web & Mobile Development",
+            "Admin Support"
+        ],
+        "country": "Italy",
+        "description": "I do ...",
+        "feedback": "3.9923456684902",
+        "id": "~aaaa9999d3f394624e",
+        "last_activity": "June 17, 2014",
+        "member_since": "July 21, 2011",
+        "name": "Lorenzo Zulli",
+        "portfolio_items_count": "65",
+        "portrait_50": "https://...",
+        "profile_type": "Independent",
+        "rate": "22.22",
+        "skills": [
             "java",
             "django-framework",
             "mongodb",
@@ -61,14 +89,14 @@
             "Web & Mobile Development",
             "Admin Support"
         ],
-        "country": "Iran",
+        "country": "Italy",
         "description": "I do ...",
-        "feedback": "3.9923456684902",
+        "feedback": "4.8424790960452",
         "id": "~aaaa9999d3f394624e",
         "last_activity": "June 17, 2014",
         "member_since": "July 21, 2011",
-        "name": "Khalid DJ",
-        "portfolio_items_count": "65",
+        "name": "Giovanni Prati",
+        "portfolio_items_count": "69",
         "portrait_50": "https://...",
         "profile_type": "Independent",
         "rate": "22.22",

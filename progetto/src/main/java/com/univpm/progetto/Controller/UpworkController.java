@@ -5,12 +5,14 @@ import com.univpm.progetto.Exceptions.FiltersException;
 import com.univpm.progetto.Exceptions.StatsException;
 import com.univpm.progetto.Models.Freelancer;
 import com.univpm.progetto.Services.UpworkService;
+import com.univpm.progetto.Utilities.FreelancersParser;
 
 import org.json.JSONObject;
-import org.json.JSONArray;
+import org.json.simple.JSONArray;
 import java.util.Vector;
 
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -21,16 +23,16 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class UpworkController {
     private UpworkService upworkservice;
+    private FreelancersParser fParser;
     /**
      * Rotta per iniziare la ricerca degli utenti con la skill java
      * @param body
      * @return
      * @throws BadRequestException
      */
-    @PostMapping(value = "/searchjava")
-    public void startSearch(@RequestBody JSONObject body) throws BadRequestException{
-        //inserire il codice
-        System.out.println(upworkservice.startSearch());
+    @GetMapping(value = "/searchjava")
+    public JSONArray startSearch() throws BadRequestException{
+        return upworkservice.searchJava();
     }
     /**
      * Rotta per generare le statistiche
@@ -40,8 +42,9 @@ public class UpworkController {
      */
     @PostMapping(value = "/stats")
     public JSONObject stats(@RequestBody JSONArray body) throws StatsException{
-        //inserire il codice
-        return upworkservice.statsGenerator(body);
+        Vector<Freelancer> f = new Vector<Freelancer>();
+        f = this.fParser.parser();
+        return upworkservice.statsGenerator(f);
     }
    /**
     * Rotta per generare il filtro per feedback
@@ -51,7 +54,6 @@ public class UpworkController {
     */
     @PostMapping(value = "/filters/feedback")
     public JSONArray feedbackFilter(@RequestBody JSONObject body) throws FiltersException{
-        //inserire il codice
         return upworkservice.feedbackFilterGenerator();
     }
     /**
@@ -62,7 +64,6 @@ public class UpworkController {
      */
     @PostMapping(value = "/filters/portfolio")
     public JSONArray portfolioFilter(@RequestBody JSONObject body) throws FiltersException{
-        //inserire il codice
         return upworkservice.portfolioFilterGenerator();
     }
 }
