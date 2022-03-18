@@ -16,8 +16,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
- * Classe che contiene i metodi del controller 
- * @author Lorenzo Zulli, Giovanni Prati
+ * Classe che contiene i metodi del Controller 
+ * @author Lorenzo Zulli
+ * @author Giovanni Prati
  */
 @RestController
 public class UpworkController {

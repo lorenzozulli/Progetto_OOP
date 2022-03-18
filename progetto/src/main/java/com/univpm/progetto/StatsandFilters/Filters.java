@@ -5,7 +5,8 @@ import java.util.Vector;
 
 /**
  * Classe che ci permette di accedere ai filtri 
- * @author Lorenzo Zulli, Giovanni Prati
+ * @author Lorenzo Zulli
+ * @author Giovanni Prati
  */
 
 public class Filters {

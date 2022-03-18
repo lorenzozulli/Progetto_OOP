@@ -14,8 +14,9 @@ import org.json.JSONObject;
 import java.util.Vector;
 
 /**
- * Classe contente i metodi del servizio del programma
- * @author Lorenzo Zulli, Giovanni Prati
+ * Classe contente i metodi del Service
+ * @author Lorenzo Zulli
+ * @author Giovanni Prati
  */
 
 public class UpworkService {

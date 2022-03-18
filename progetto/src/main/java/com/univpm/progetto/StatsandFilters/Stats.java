@@ -7,7 +7,8 @@ import java.util.Vector;
 
 /**
  * Classe per ottenere le statistiche relative ai freelancers
- * @author Lorenzo Zulli, Giovanni Prati
+ * @author Lorenzo Zulli
+ * @author Giovanni Prati
  */
 
 public class Stats{

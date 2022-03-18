@@ -1,7 +1,8 @@
 package com.univpm.progetto.Exceptions;
 /**
  *  Classe che descrive l'eccezione durante i metodi legati al calcolo delle statistiche
- *  @author Lorenzo Zulli, Giovanni Prati
+ * @author Lorenzo Zulli
+ * @author Giovanni Prati
  */
 
 public class StatsException extends Exception {

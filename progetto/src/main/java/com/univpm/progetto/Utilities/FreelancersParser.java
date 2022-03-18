@@ -12,8 +12,8 @@ import com.univpm.progetto.Models.Freelancer;
 
 /**
  * Classe che effettua la richiesta HTTP(nel nostro caso simulata attraverso il file JSON) e fa il parsing
- * 
- * @author Lorenzo Zulli, Giovanni Prati
+ * @author Lorenzo Zulli
+ * @author Giovanni Prati
  */
 public class FreelancersParser {
     /**

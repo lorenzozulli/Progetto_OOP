@@ -6,8 +6,9 @@ import org.json.simple.JSONArray;
 import org.json.JSONObject;
 
 /**
- * Classe che modella in modo generale il Freelancer
- * @author Lorenzo Zulli, Giovanni Prati
+ * Classe che modella il Freelancer
+ * @author Lorenzo Zulli
+ * @author Giovanni Prati
  */
 
 public class Freelancer {
@@ -231,7 +232,7 @@ public class Freelancer {
     }
 
     /**
-     * Setter perportfolio_items_count
+     * Setter per portfolio_items_count
      * @param portfolio_items_count
      */
     public void setPortfolio_items_count(int portfolio_items_count) {
@@ -341,7 +342,7 @@ public class Freelancer {
         JSONObject object = new JSONObject();
         JSONArray arraycategories2 = new JSONArray();
         JSONArray arrayskills = new JSONArray();
-               
+
         for(int i=0; i<this.categories2.length;i++){
             arraycategories2.add(this.categories2[i]);
         }
@@ -370,14 +371,16 @@ public class Freelancer {
 
 
     /**
-     * @return Vector<Freelancer> return the freelancers
+     * Getter per Freelancers
+     * @return freelancers
      */
     public Vector<Freelancer> getFreelancers() {
         return freelancers;
     }
 
     /**
-     * @param freelancers the freelancers to set
+     * Setter per Freelancers
+     * @param freelancers 
      */
     public void setFreelancers(Vector<Freelancer> freelancers) {
         this.freelancers = freelancers;

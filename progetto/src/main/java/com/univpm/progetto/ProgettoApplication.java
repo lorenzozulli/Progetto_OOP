@@ -4,7 +4,8 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 /**
  * Classe contenente il Main
- * @author Lorenzo Zulli, Giovanni Prati
+ * @author Lorenzo Zulli
+ * @author Giovanni Prati
  */
 
 @SpringBootApplication
