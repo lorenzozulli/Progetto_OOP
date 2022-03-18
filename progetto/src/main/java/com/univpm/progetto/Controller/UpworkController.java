@@ -11,7 +11,6 @@ import org.json.JSONObject;
 import org.json.simple.JSONArray;
 import java.util.Vector;
 
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -37,10 +36,10 @@ public class UpworkController {
     /**
      * Rotta per generare le statistiche
      * @param body
-     * @return JSONObject contente le statistiche
+     * @return JSONObject contenente le statistiche
      * @throws StatsException
      */
-    @PostMapping(value = "/stats")
+    @GetMapping(value = "/stats")
     public JSONObject stats(@RequestBody JSONArray body) throws StatsException{
         Vector<Freelancer> f = new Vector<Freelancer>();
         f = this.fParser.parser();
@@ -52,7 +51,7 @@ public class UpworkController {
     * @return JSONArray ordinato per <b>feedback</b>
     * @throws FiltersException
     */
-    @PostMapping(value = "/filters/feedback")
+    @GetMapping(value = "/filters/feedback")
     public JSONArray feedbackFilter(@RequestBody JSONObject body) throws FiltersException{
         return upworkservice.feedbackFilterGenerator();
     }
@@ -62,7 +61,7 @@ public class UpworkController {
      * @return JSONArray ordinato per <b>portfolio_items_count</b>
      * @throws FiltersException
      */
-    @PostMapping(value = "/filters/portfolio")
+    @GetMapping(value = "/filters/portfolio")
     public JSONArray portfolioFilter(@RequestBody JSONObject body) throws FiltersException{
         return upworkservice.portfolioFilterGenerator();
     }
