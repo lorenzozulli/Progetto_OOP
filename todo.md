@@ -1,6 +1,5 @@
 - [X] Vettore di Freelancers per le varie operazioni
 - [ ] Collegamento del tutto
-- [ ] Avere la API key
 - [X] Sistemare il codice, pulirlo
 - [X] Aggiungere eccezioni
 - [ ] Javadoc
