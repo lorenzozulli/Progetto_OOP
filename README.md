@@ -13,11 +13,11 @@ Il programma prende e processa, tramite l'API di Upwork gli utenti con la skill 
 
 ## Rotte Disponibili
 Vengono rese disponibili le seguenti rotte su [https://localhost:8080](https://localhost:8080).
-| Rotta     | Metodo | Funzione                      |
-|-----------|--------|-------------------------------|
-| /search   | POST   | Avvia la ricerca degli utenti |
-| /stats    | POST   | Restituisce le statistiche    |
-| /filters  | POST   | Restituisce i filtri          |
+| Rotta                | Metodo | Funzione                      |
+|----------------------|--------|-------------------------------|
+| [/search](#search)   | GET    | Avvia la ricerca degli utenti |
+| [/stats](#stats)     | GET    | Restituisce le statistiche    |
+| [/filters](#filters) | GET    | Restituisce i filtri          |
 
 ## /search
 Tramite questa rotta andiamo ad effettuare la vera e propra ricerca degli utenti
@@ -115,6 +115,11 @@ Tramite questa rotta andiamo a generare i seguenti filtri attraverso le seguenti
    "..."
 ]
 ```
+
+# Eccezioni
+
+# JUNIT
+
 # Javadoc
 Attraverso i commenti "Javadoc" che mette a disposizione Java stesso siamo riusciti a creare una documentazione dettagliata di tutte le classi e di diversi metodi, di seguito il link: [Javadoc del progetto](https://www.youtube.com/watch?v=dQw4w9WgXcQ)
 
@@ -126,5 +131,8 @@ Attraverso i commenti "Javadoc" che mette a disposizione Java stesso siamo riusc
 * [Postman](https://www.postman.com/) - Ambiente per effettuare richieste all'API.
 
 # Autori
-* Lorenzo Zulli: [Github](https://github.com/lorenzozulli)
-* Giovanni prati: [Github](https://github.com/jjohnnyUtah)
+
+|Nome          |Links                                    |Contributo(%)|Focus su                          |
+|--------------|-----------------------------------------|-------------|----------------------------------|
+|Lorenzo Zulli |[Github](https://github.com/lorenzozulli)| 50%         |Fase di modellazione delle classi |
+|Giovanni Prati|[Github](https://github.com/jjohnnyUtah) | 50%         |Fase di implementazione dei metodi|

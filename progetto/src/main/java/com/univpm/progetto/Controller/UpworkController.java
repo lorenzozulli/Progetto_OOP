@@ -28,7 +28,7 @@ public class UpworkController {
      * @return JSONArray contenente gli utenti con la skill java
      * @throws BadRequestException
      */
-    @GetMapping(value = "/searchjava")
+    @GetMapping(value = "/search")
     public JSONArray startSearch() throws BadRequestException{
         return upworkservice.searchJava();
     }
