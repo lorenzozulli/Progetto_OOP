@@ -27,7 +27,7 @@ public class FreelancersParser {
     public Vector<Freelancer> parser() {
         JSONParser parser = new JSONParser();
         Vector<Freelancer> f = new Vector<Freelancer>();
-        File file = new File("DB.json");
+        File file = new File("progetto\\DB.json");
 
         try (FileReader reader = new FileReader(file)) {
             JSONArray freelancers = (JSONArray) parser.parse(reader);

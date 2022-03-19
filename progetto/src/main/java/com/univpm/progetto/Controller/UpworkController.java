@@ -5,14 +5,12 @@ import com.univpm.progetto.Exceptions.FiltersException;
 import com.univpm.progetto.Exceptions.StatsException;
 import com.univpm.progetto.Models.Freelancer;
 import com.univpm.progetto.Services.UpworkService;
-import com.univpm.progetto.Utilities.FreelancersParser;
 
-import org.json.JSONObject;
+import org.json.simple.JSONObject;
 import org.json.simple.JSONArray;
 import java.util.Vector;
 
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
@@ -22,12 +20,7 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 public class UpworkController {
-    //private UpworkService upworkservice;
-    //private FreelancersParser fParser;
-    @GetMapping(value = "/")
-    public String hello(){
-        return "Hello!";
-    }
+    UpworkService upworkservice = new UpworkService();
     /**
      * Rotta per iniziare la ricerca degli utenti con la skill java
      * @param body
@@ -36,7 +29,6 @@ public class UpworkController {
      */
     @GetMapping(value = "/searchjava")
     public JSONArray startSearch() throws BadRequestException{
-        UpworkService upworkservice = new UpworkService();
         return upworkservice.searchJava();
     }
     /**
@@ -48,8 +40,7 @@ public class UpworkController {
     @GetMapping(value = "/stats")
     public JSONObject stats() throws BadRequestException, StatsException{
         Vector<Freelancer> f = new Vector<Freelancer>();
-        //f = this.fParser.parser();
-        UpworkService upworkservice = new UpworkService();
+        f = this.fParser.parser();
         return upworkservice.statsGenerator(f);
     }
    /**
@@ -59,7 +50,7 @@ public class UpworkController {
     * @throws FiltersException
     */
     @GetMapping(value = "/filters/feedback")
-    public JSONArray feedbackFilter(@RequestBody JSONObject body) throws FiltersException{
+    public JSONArray feedbackFilter() throws FiltersException{
         UpworkService upworkservice = new UpworkService();
         return upworkservice.feedbackFilterGenerator();
     }
@@ -70,7 +61,7 @@ public class UpworkController {
      * @throws FiltersException
      */
     @GetMapping(value = "/filters/portfolio")
-    public JSONArray portfolioFilter(@RequestBody JSONObject body) throws FiltersException{
+    public JSONArray portfolioFilter() throws FiltersException{
         UpworkService upworkservice = new UpworkService();
         return upworkservice.portfolioFilterGenerator();
     }

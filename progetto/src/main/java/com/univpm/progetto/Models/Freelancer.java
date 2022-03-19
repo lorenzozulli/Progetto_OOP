@@ -3,7 +3,7 @@ package com.univpm.progetto.Models;
 import java.util.Vector;
 
 import org.json.simple.JSONArray;
-import org.json.JSONObject;
+import org.json.simple.JSONObject;
 
 /**
  * Classe che modella il Freelancer

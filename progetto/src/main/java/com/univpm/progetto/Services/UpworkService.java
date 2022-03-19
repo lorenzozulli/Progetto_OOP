@@ -10,7 +10,7 @@ import com.univpm.progetto.Exceptions.FiltersException;
 import com.univpm.progetto.Exceptions.StatsException;
 
 import org.json.simple.JSONArray;
-import org.json.JSONObject;
+import org.json.simple.JSONObject;
 import java.util.Vector;
 
 /**
@@ -35,8 +35,7 @@ public class UpworkService {
         f = fParser.parser();
         JSONArray ja = new JSONArray();
         for(int i=0;i<f.size();i++){
-            Freelancer s = new Freelancer();
-            ja.add(s.toJSONObject());
+            ja.add(f.get(i).toJSONObject());
         }
         return ja;
     }
