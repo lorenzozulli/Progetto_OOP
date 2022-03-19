@@ -22,8 +22,12 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 public class UpworkController {
-    private UpworkService upworkservice;
-    private FreelancersParser fParser;
+    //private UpworkService upworkservice;
+    //private FreelancersParser fParser;
+    @GetMapping(value = "/")
+    public String hello(){
+        return "Hello!";
+    }
     /**
      * Rotta per iniziare la ricerca degli utenti con la skill java
      * @param body
@@ -32,7 +36,8 @@ public class UpworkController {
      */
     @GetMapping(value = "/searchjava")
     public JSONArray startSearch() throws BadRequestException{
-        return this.upworkservice.searchJava();
+        UpworkService upworkservice = new UpworkService();
+        return upworkservice.searchJava();
     }
     /**
      * Rotta per generare le statistiche
@@ -41,9 +46,10 @@ public class UpworkController {
      * @throws StatsException
      */
     @GetMapping(value = "/stats")
-    public JSONObject stats(@RequestBody JSONArray body) throws BadRequestException, StatsException{
+    public JSONObject stats() throws BadRequestException, StatsException{
         Vector<Freelancer> f = new Vector<Freelancer>();
-        f = this.fParser.parser();
+        //f = this.fParser.parser();
+        UpworkService upworkservice = new UpworkService();
         return upworkservice.statsGenerator(f);
     }
    /**
@@ -54,6 +60,7 @@ public class UpworkController {
     */
     @GetMapping(value = "/filters/feedback")
     public JSONArray feedbackFilter(@RequestBody JSONObject body) throws FiltersException{
+        UpworkService upworkservice = new UpworkService();
         return upworkservice.feedbackFilterGenerator();
     }
     /**
@@ -64,6 +71,7 @@ public class UpworkController {
      */
     @GetMapping(value = "/filters/portfolio")
     public JSONArray portfolioFilter(@RequestBody JSONObject body) throws FiltersException{
+        UpworkService upworkservice = new UpworkService();
         return upworkservice.portfolioFilterGenerator();
     }
 }

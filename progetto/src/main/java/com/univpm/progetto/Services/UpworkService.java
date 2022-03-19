@@ -23,7 +23,6 @@ public class UpworkService {
 
     private Stats stats;
     private Filters filters;
-    private FreelancersParser fParser;
 
     /**
      * Metodo per avviare una ricerca
@@ -31,10 +30,12 @@ public class UpworkService {
      * @throws BadRequestException
      */
     public JSONArray searchJava() throws BadRequestException{
+        FreelancersParser fParser = new FreelancersParser();
         Vector<Freelancer> f = new Vector<Freelancer>();
-        f = this.fParser.parser();
+        f = fParser.parser();
         JSONArray ja = new JSONArray();
-        for(Freelancer s : f){
+        for(int i=0;i<f.size();i++){
+            Freelancer s = new Freelancer();
             ja.add(s.toJSONObject());
         }
         return ja;

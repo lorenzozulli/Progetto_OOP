@@ -5,6 +5,8 @@ import org.json.simple.JSONObject;
 import java.util.Vector;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
+
+import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 
@@ -25,8 +27,9 @@ public class FreelancersParser {
     public Vector<Freelancer> parser() {
         JSONParser parser = new JSONParser();
         Vector<Freelancer> f = new Vector<Freelancer>();
+        File file = new File("DB.json");
 
-        try (FileReader reader = new FileReader("DB.json")) {
+        try (FileReader reader = new FileReader(file)) {
             JSONArray freelancers = (JSONArray) parser.parse(reader);
             
             for (int i = 0; i < freelancers.size(); i++) {
