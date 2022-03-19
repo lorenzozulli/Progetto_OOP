@@ -6,13 +6,13 @@
             "Admin Support"
         ],
         "country": "Italy",
-        "description": "I do ...",
-        "feedback": "4.8424790960452",
-        "id": "~aaaa9999d3f394624e",
+        "description": "I do small java projects!",
+        "feedback": "4.345867464765",
+        "id": "~zzqq",
         "last_activity": "June 17, 2014",
         "member_since": "July 21, 2011",
         "name": "Cristina Vallese",
-        "portfolio_items_count": "69",
+        "portfolio_items_count": "10",
         "portrait_50": "https://...",
         "profile_type": "Independent",
         "rate": "22.22",
@@ -34,16 +34,16 @@
             "Admin Support"
         ],
         "country": "India",
-        "description": "I do ...",
+        "description": "I do C++ and Python and youtube videos!",
         "feedback": "4.5648729578682",
-        "id": "~aaaa9999d3f394624e",
-        "last_activity": "June 17, 2014",
-        "member_since": "July 21, 2011",
+        "id": "~iijj",
+        "last_activity": "May 17, 2019",
+        "member_since": "July 21, 2010",
         "name": "John Johnson",
         "portfolio_items_count": "23",
         "portrait_50": "https://...",
         "profile_type": "Independent",
-        "rate": "22.22",
+        "rate": "13.22",
         "skills": [
             "c++",
             "python",
@@ -53,7 +53,7 @@
             "postgresql"
         ],
         "test_passed_count": "3",
-        "title": "Web Developer"
+        "title": "Developer"
     },
     {
         "categories2": [
@@ -62,26 +62,25 @@
             "Admin Support"
         ],
         "country": "Italy",
-        "description": "I do ...",
+        "description": "I do java projects!",
         "feedback": "3.9923456684902",
-        "id": "~aaaa9999d3f394624e",
-        "last_activity": "June 17, 2014",
-        "member_since": "July 21, 2011",
+        "id": "~jjqq",
+        "last_activity": "November 24, 2018",
+        "member_since": "July 1, 2011",
         "name": "Lorenzo Zulli",
-        "portfolio_items_count": "65",
+        "portfolio_items_count": "26",
         "portrait_50": "https://...",
         "profile_type": "Independent",
-        "rate": "22.22",
+        "rate": "19.01",
         "skills": [
             "java",
-            "django-framework",
-            "mongodb",
-            "jquery",
+            "c++",
+            "python",
             "html5",
             "postgresql"
         ],
         "test_passed_count": "3",
-        "title": "Web Developer"
+        "title": "Backend Developer"
     },
     {
         "categories2": [
@@ -90,16 +89,16 @@
             "Admin Support"
         ],
         "country": "Italy",
-        "description": "I do ...",
+        "description": "I do java project!(i am a big fan of John Johnson)",
         "feedback": "4.8424790960452",
-        "id": "~aaaa9999d3f394624e",
-        "last_activity": "June 17, 2014",
-        "member_since": "July 21, 2011",
+        "id": "~oo.pp",
+        "last_activity": "March 28, 2019",
+        "member_since": "December 25, 2009",
         "name": "Giovanni Prati",
-        "portfolio_items_count": "69",
+        "portfolio_items_count": "21",
         "portrait_50": "https://...",
         "profile_type": "Independent",
-        "rate": "22.22",
+        "rate": "10.25",
         "skills": [
             "java",
             "django-framework",
