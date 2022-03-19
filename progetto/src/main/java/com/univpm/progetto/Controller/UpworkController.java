@@ -5,6 +5,7 @@ import com.univpm.progetto.Exceptions.FiltersException;
 import com.univpm.progetto.Exceptions.StatsException;
 import com.univpm.progetto.Models.Freelancer;
 import com.univpm.progetto.Services.UpworkService;
+import com.univpm.progetto.Utilities.FreelancersParser;
 
 import org.json.simple.JSONObject;
 import org.json.simple.JSONArray;
@@ -40,7 +41,8 @@ public class UpworkController {
     @GetMapping(value = "/stats")
     public JSONObject stats() throws BadRequestException, StatsException{
         Vector<Freelancer> f = new Vector<Freelancer>();
-        f = this.fParser.parser();
+        FreelancersParser fParser = new FreelancersParser();
+        f = fParser.parser();
         return upworkservice.statsGenerator(f);
     }
    /**
@@ -51,8 +53,10 @@ public class UpworkController {
     */
     @GetMapping(value = "/filters/feedback")
     public JSONArray feedbackFilter() throws FiltersException{
-        UpworkService upworkservice = new UpworkService();
-        return upworkservice.feedbackFilterGenerator();
+        Vector<Freelancer> f = new Vector<Freelancer>();
+        FreelancersParser fParser = new FreelancersParser();
+        f = fParser.parser();
+        return upworkservice.feedbackFilterGenerator(f);
     }
     /**
      * Rotta per generare il filtro per dimensione del portfolio
@@ -62,7 +66,9 @@ public class UpworkController {
      */
     @GetMapping(value = "/filters/portfolio")
     public JSONArray portfolioFilter() throws FiltersException{
-        UpworkService upworkservice = new UpworkService();
-        return upworkservice.portfolioFilterGenerator();
+        Vector<Freelancer> f = new Vector<Freelancer>();
+        FreelancersParser fParser = new FreelancersParser();
+        f = fParser.parser();
+        return upworkservice.portfolioFilterGenerator(f);
     }
 }

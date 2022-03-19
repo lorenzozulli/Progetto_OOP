@@ -35,6 +35,18 @@ public class FreelancersParser {
             for (int i = 0; i < freelancers.size(); i++) {
                 JSONObject freelancer = (JSONObject) freelancers.get(i);
 
+                JSONArray jsonArray_skills = (JSONArray) freelancer.get("skills");
+                int numeroSkills = jsonArray_skills.size();
+                String[] skills = new String[numeroSkills];
+                boolean javacheck = false;
+                    for (int k = 0; k < numeroSkills; k++) {
+                        skills[k] = (String) jsonArray_skills.get(k);
+                        if (skills[k].equals("java"))
+                            javacheck = true;
+                    }
+                    if(!javacheck)
+                     continue;
+
                 JSONArray jsonArray_categories2 = (JSONArray) freelancer.get("categories2");
                 int numeroCategories2 = jsonArray_categories2.size();
                 String[] categories2 = new String[numeroCategories2];
@@ -53,18 +65,6 @@ public class FreelancersParser {
                 String portrait_50 = (String)freelancer.get("portrait_50");
                 String profile_type = (String)freelancer.get("profile_type");
                 float rate = Float.parseFloat((String) freelancer.get("rate"));
-
-                JSONArray jsonArray_skills = (JSONArray) freelancer.get("skills");
-                int numeroSkills = jsonArray_skills.size();
-                String[] skills = new String[numeroSkills];
-                boolean javacheck = false;
-                    for (int k = 0; k < numeroSkills; k++) {
-                        skills[k] = (String) jsonArray_skills.get(k);
-                        if (skills[k].equals("java"))
-                            javacheck = true;
-                    }
-                    if(!javacheck)
-                     continue;
 
                 int test_passed_count = Integer.parseInt((String) freelancer.get("test_passed_count")); 
                 String title = (String) freelancer.get("title");

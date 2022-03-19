@@ -338,6 +338,7 @@ public class Freelancer {
      * Metodo toJSONObject
      * @return object
      */
+    @SuppressWarnings("unchecked")
     public JSONObject toJSONObject(){
         JSONObject object = new JSONObject();
         JSONArray arraycategories2 = new JSONArray();
