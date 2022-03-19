@@ -2,14 +2,18 @@ package com.univpm.progetto.Utilities;
 
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
+
+import java.util.List;
 import java.util.Vector;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 
+import com.univpm.progetto.Exceptions.MyFileNotFoundException;
 import com.univpm.progetto.Models.Freelancer;
 
 /**
@@ -23,8 +27,9 @@ public class FreelancersParser {
      * 
      * @param responsebody
      * @return f
+     * @throws MyFileNotFoundException
      */
-    public Vector<Freelancer> parser() {
+    public Vector<Freelancer> parser() throws MyFileNotFoundException{
         JSONParser parser = new JSONParser();
         Vector<Freelancer> f = new Vector<Freelancer>();
         File file = new File("progetto\\DB.json");
@@ -74,10 +79,10 @@ public class FreelancersParser {
                         portrait_50, profile_type, rate, skills, test_passed_count,
                         title);
                 f.add(daAggiungere);
-        }           
-        } catch (IOException e) {
-            e.printStackTrace();
+            }
         } catch (ParseException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
             e.printStackTrace();
         }
         return f;

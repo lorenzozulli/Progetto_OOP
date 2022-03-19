@@ -7,6 +7,7 @@ import com.univpm.progetto.Utilities.FreelancersParser;
 
 import com.univpm.progetto.Exceptions.BadRequestException;
 import com.univpm.progetto.Exceptions.FiltersException;
+import com.univpm.progetto.Exceptions.MyFileNotFoundException;
 import com.univpm.progetto.Exceptions.StatsException;
 
 import org.json.simple.JSONArray;
@@ -25,9 +26,10 @@ public class UpworkService {
      * Metodo per avviare una ricerca
      * @return search
      * @throws BadRequestException
+     * @throws MyFileNotFoundException
      */
     @SuppressWarnings("unchecked")
-    public JSONArray searchJava() throws BadRequestException{
+    public JSONArray searchJava() throws BadRequestException, MyFileNotFoundException{
         FreelancersParser fParser = new FreelancersParser();
         Vector<Freelancer> f = new Vector<Freelancer>();
         f = fParser.parser();

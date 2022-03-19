@@ -6,8 +6,9 @@ package com.univpm.progetto.Exceptions;
  */
 
 public class BadRequestException extends Exception {
-
     public BadRequestException(){
-        super("ERRORE(Request):La richesta all'API di Upwork non è andata a buon fine");
+    }
+    public BadRequestException(String msg){
+        super(msg);
     }
 }

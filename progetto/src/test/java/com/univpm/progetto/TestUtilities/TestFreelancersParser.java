@@ -3,6 +3,7 @@ package com.univpm.progetto.TestUtilities;
 import static org.junit.jupiter.api.Assertions.*;
 
 import com.univpm.progetto.Utilities.FreelancersParser;
+import com.univpm.progetto.Exceptions.MyFileNotFoundException;
 import com.univpm.progetto.Models.Freelancer;
 
 //import org.junit.gen5.api.AfterEach;
@@ -15,12 +16,12 @@ class TestFreelancersParser {
     Freelancer f = new Freelancer();
 
     @Test
-    void testParser(){
-        Vector<Freelancer> users = test.parser();
-        boolean output=false;
-        if(users.get(0).getName().equals("Cristina Vallese"))
+    void testParser() throws MyFileNotFoundException {
+            boolean output=false;
+            Vector<Freelancer> users = test.parser();
+            if(users.get(0).getName().equals("Cristin0 Vallese"))
             output = true;
-        assertEquals(true, output);
+            assertEquals(true, output);
     }
     
 }
