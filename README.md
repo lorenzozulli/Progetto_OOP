@@ -7,9 +7,13 @@ Per maggiori infomazioni:
 * [Sito ufficiale di Upwork](https://www.upwork.com/)
 * [Pagina Wikipedia](https://en.wikipedia.org/wiki/Upwork).
 
-Lo scopo del progetto è quello di sviluppare un'applicazione Java per analizzare i freelancer appartenenti al sito con la skill *"java"*.
+Lo scopo del progetto è quello di sviluppare un'applicazione in linguaggio Java per analizzare i freelancer appartenenti al sito, con la skill *"java"*.
 
+### Scopo originario
 Il programma prende e processa, tramite l'API di Upwork gli utenti con la skill *"java"*, poi resituisce a noi Statistiche e/o Filtri in base alla rotta scelta.
+
+### Scopo aggiornato in quanto problemi con l'API
+Il programma prende e processa, tramite il file <b>DB.json</b> gli utenti con la skill *"java"*, poi resituisce a noi Statistiche e/o Filtri in base alla rotta scelta.
 
 ## Rotte Disponibili
 Vengono rese disponibili le seguenti rotte su [https://localhost:8080](https://localhost:8080).
@@ -20,7 +24,7 @@ Vengono rese disponibili le seguenti rotte su [https://localhost:8080](https://l
 | [/filters](#filters) | GET    | Restituisce i filtri          |
 
 ## /search
-Tramite questa rotta andiamo ad effettuare la vera e propra ricerca degli utenti
+Tramite questa rotta andiamo ad effettuare ricerca degli utenti con la skill *"java"*.
 
 Esempio di risultato:
 ```json
@@ -119,6 +123,9 @@ Tramite questa rotta andiamo a generare i seguenti filtri attraverso le seguenti
 # Eccezioni
 
 # JUNIT
+Nella sezione "test" del progetto abbiamo implementato:
+* Test per verificare la correttezza dei metodi inerenti alla classe Stats.java
+* Test per verificare la correttezza dei metodi inerenti alla classe Filters.java
 
 # Javadoc
 Attraverso i commenti "Javadoc" che mette a disposizione Java stesso siamo riusciti a creare una documentazione dettagliata di tutte le classi e di diversi metodi, di seguito il link: [Javadoc del progetto](https://www.youtube.com/watch?v=dQw4w9WgXcQ)
