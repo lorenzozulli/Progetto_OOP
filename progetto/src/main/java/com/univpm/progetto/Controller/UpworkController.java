@@ -27,12 +27,12 @@ public class UpworkController {
     /**
      * Rotta per iniziare la ricerca degli utenti con la skill java
      * @param body
-     * @return
+     * @return JSONArray contenente gli utenti con la skill java
      * @throws BadRequestException
      */
     @GetMapping(value = "/searchjava")
     public JSONArray startSearch() throws BadRequestException{
-        return upworkservice.searchJava();
+        return this.upworkservice.searchJava();
     }
     /**
      * Rotta per generare le statistiche
@@ -41,7 +41,7 @@ public class UpworkController {
      * @throws StatsException
      */
     @GetMapping(value = "/stats")
-    public JSONObject stats(@RequestBody JSONArray body) throws StatsException{
+    public JSONObject stats(@RequestBody JSONArray body) throws BadRequestException, StatsException{
         Vector<Freelancer> f = new Vector<Freelancer>();
         f = this.fParser.parser();
         return upworkservice.statsGenerator(f);
