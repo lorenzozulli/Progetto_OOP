@@ -15,6 +15,12 @@ Il programma prende e processa, tramite **l'API di Upwork** gli utenti con la sk
 ### Scopo aggiornato in quanto problemi con l'API
 Il programma prende e processa, tramite il file **DB.json** gli utenti con la skill *java*, poi resituisce a noi statistiche e/o filtri in base alla rotta scelta.
 
+## Guida all'avvio
+0. Clonare la repository di github sul proprio computer ([Come clonare una repository](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository)).
+1. Aprire il file ``` ProgettoApplication.java ```.
+2. Eseguire il file ``` ProgettoApplication.java ```.
+3. Recarsi sul proprio browser all'indirizzo [https://localhost:8080](https://localhost:8080) e inserire una delle rotte disponibili.
+
 ## Rotte Disponibili
 Vengono rese disponibili le seguenti rotte su [https://localhost:8080](https://localhost:8080).
 |Rotta               |Metodo|Funzione                     |
@@ -74,25 +80,25 @@ Esempio di risultato:
 ```
 
 ## /filters
-Tramite questa rotta andiamo a generare i seguenti filtri attraverso le seguenti keywords:
+Tramite questa rotta andiamo a generare i seguenti filtri aggiungendo i path:
 * **/feedback**: feedback in ordine crescente<br> 
    Esempio di risultato: 
 ```json
 [
    {
-      "...ohter things about the user..."
+      "..."
       "feedback": "1.6655474896789",
-      "...ohter things about the user..."
+      "..."
    },
    {
-      "...ohter things about the user..."
+      "..."
       "feedback": "2.56785904954805",
-      "...ohter things about the user..."
+      "..."
    },
    {
-      "...ohter things about the user..."
+      "..."
       "feedback": "3.56787346023946",
-      "...ohter things about the user..."
+      "..."
    },
    "..."
 ]
@@ -102,19 +108,19 @@ Tramite questa rotta andiamo a generare i seguenti filtri attraverso le seguenti
 ```json
 [
    {
-      "...ohter things about the user..."
+      "..."
       "portfolio_items_count": "1",
-      "...ohter things about the user..."
+      "..."
    },
    {
-      "...ohter things about the user..."
+      "..."
       "portfolio_items_count": "2",
-      "...ohter things about the user..."
+      "..."
    },
    {
-      "...ohter things about the user..."
+      "..."
       "portfolio_items_count": "3",
-      "...ohter things about the user..."
+      "..."
    },
    "..."
 ]
@@ -129,12 +135,12 @@ Il programma riesce all'occorrenza, a lanciare eccezioni personalizzate:
 
 # JUNIT
 Nella sezione *test* del progetto abbiamo implementato:
-* **TestStats** Test per verificare la correttezza dei metodi inerenti alla classe Stats.java
-* **TestFilters** Test per verificare la correttezza dei metodi inerenti alla classe Filters.java
-* **TestFreelancersParser** Test per verificare la correttezza del parsing dei dati
+* **TestStats:** Per verificare la correttezza dei metodi inerenti alla classe Stats.java
+* **TestFilters:** Per verificare la correttezza dei metodi inerenti alla classe Filters.java
+* **TestFreelancersParser:** Per verificare la correttezza del parsing dei dati
 
 # Javadoc
-Attraverso i commenti speciali **Javadoc**, che mette a disposizione Java stesso siamo riusciti a creare una documentazione dettagliata di tutte le classi e di diversi metodi, di seguito il link: [Javadoc del progetto](https://www.youtube.com/watch?v=dQw4w9WgXcQ)
+Attraverso i commenti speciali **Javadoc**, che mette a disposizione Java stesso siamo riusciti a creare una documentazione dettagliata di tutte le classi e di diversi metodi (si trova nella cartella **doc** del progetto).
 
 # Software utilizzati
 * [Eclipse](https://www.eclipse.org/downloads/) - Ambiente di sviluppo (Giovanni Prati).
