@@ -1,0 +1,10 @@
+com.univpm.progetto
+com.univpm.progetto.Controller
+com.univpm.progetto.Exceptions
+com.univpm.progetto.Models
+com.univpm.progetto.Services
+com.univpm.progetto.StatsandFilters
+com.univpm.progetto.TestException
+com.univpm.progetto.TestStatsandFilters
+com.univpm.progetto.TestUtilities
+com.univpm.progetto.Utilities

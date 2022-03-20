@@ -21,7 +21,7 @@ public class UpworkService {
     /**
      * Metodo per avviare una ricerca
      * @return search
-     * @throws MyFileNotFoundException
+     * @throws MyFileNotFoundException lancia eccezione di tipo MyFileNotFoundException
      */
     @SuppressWarnings("unchecked")
 	public JSONArray searchJava() throws MyFileNotFoundException{

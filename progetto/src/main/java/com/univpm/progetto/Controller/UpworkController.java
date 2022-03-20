@@ -23,7 +23,7 @@ public class UpworkController{
     /**
      * Rotta per iniziare la ricerca degli utenti con la skill java
      * @return JSONArray contenente gli utenti con la skill java
-     * @throws MyFileNotFoundException
+     * @throws MyFileNotFoundException Eccezione di tipo MyFileNotFound
      */
     @GetMapping(value = "/search")
     public JSONArray startSearch() throws MyFileNotFoundException{
