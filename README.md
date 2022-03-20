@@ -124,11 +124,11 @@ Tramite questa rotta andiamo a generare i seguenti filtri attraverso le seguenti
 Il programma riesce all'occorrenza, a lanciare eccezioni personalizzate:
 * **MyFileNotFoundException** Eccezione nel caso in cui il file non venisse trovato e/o il percorso del file fosse sbagliato<br>
 ```java
-"ERRORE: non è stato possibile trovare il file!"
-``` 
-* **StatsException** Eccezione nel caso in cui un calcolo nelle statistiche fosse impossibile da fare (es: divisione per 0)<br>
+"ERRORE: non e' stato possibile trovare il file!"
+```
+* **BodyIsEmptyException** Eccezione nel caso in cui il Database è vuoto<br>
 ```java
-"ERRORE: "
+"ERRORE: Il file non contiene nulla!"
 ```
 
 # JUNIT
@@ -147,7 +147,7 @@ Attraverso i commenti speciali **Javadoc**, che mette a disposizione Java stesso
 * [Spring Boot](https://spring.io/projects/spring-boot) - Framework per lo sviluppo dell'applicazione Java.
 
 # Autori
-|Nome          |Links                                    |Contributo(%)|Focus su                          |
+|Nome          |Links                                    |Contributo(%)|Focus su                         |
 |--------------|-----------------------------------------|-------------|----------------------------------|
-|Lorenzo Zulli |[Github](https://github.com/lorenzozulli)| 50%         |Fase di modellazione delle classi |
-|Giovanni Prati|[Github](https://github.com/jjohnnyUtah) | 50%         |Fase di implementazione dei metodi|
+|Lorenzo Zulli |[Github](https://github.com/lorenzozulli)|50%          |Fase di modellazione delle classi |
+|Giovanni Prati|[Github](https://github.com/jjohnnyUtah) |50%          |Fase di implementazione dei metodi|
