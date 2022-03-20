@@ -3,28 +3,28 @@
 
 Upwork è una piattaforma Americana per effettuare freelancing online e/o intervistare, assumere e collaborare con freelancers.
 
-Per maggiori infomazioni: 
+Per maggiori informazioni: 
 * [Sito ufficiale di Upwork](https://www.upwork.com/)
 * [Pagina Wikipedia](https://en.wikipedia.org/wiki/Upwork).
 
-Lo scopo del progetto è quello di sviluppare un'applicazione in linguaggio Java per analizzare i freelancer appartenenti al sito, con la skill *"java"*.
+Lo scopo del progetto è quello di sviluppare un'applicazione in linguaggio Java per analizzare i freelancer appartenenti al sito, con la skill *java*.
 
 ### Scopo originario
-Il programma prende e processa, tramite l'API di Upwork gli utenti con la skill *"java"*, poi resituisce a noi Statistiche e/o Filtri in base alla rotta scelta.
+Il programma prende e processa, tramite **l'API di Upwork** gli utenti con la skill *java*, poi resituisce a noi statistiche e/o filtri in base alla rotta scelta.
 
 ### Scopo aggiornato in quanto problemi con l'API
-Il programma prende e processa, tramite il file <b>DB.json</b> gli utenti con la skill *"java"*, poi resituisce a noi Statistiche e/o Filtri in base alla rotta scelta.
+Il programma prende e processa, tramite il file **DB.json** gli utenti con la skill *java*, poi resituisce a noi statistiche e/o filtri in base alla rotta scelta.
 
 ## Rotte Disponibili
 Vengono rese disponibili le seguenti rotte su [https://localhost:8080](https://localhost:8080).
-| Rotta                | Metodo | Funzione                      |
-|----------------------|--------|-------------------------------|
-| [/search](#search)   | GET    | Avvia la ricerca degli utenti |
-| [/stats](#stats)     | GET    | Restituisce le statistiche    |
-| [/filters](#filters) | GET    | Restituisce i filtri          |
+|Rotta               |Metodo|Funzione                     |
+|--------------------|------|-----------------------------|
+|[/search](#search)  |GET   |Avvia la ricerca degli utenti|
+|[/stats](#stats)    |GET   |Restituisce le statistiche   |
+|[/filters](#filters)|GET   |Restituisce i filtri         |
 
 ## /search
-Tramite questa rotta andiamo ad effettuare ricerca degli utenti con la skill *"java"*.
+Tramite questa rotta andiamo ad effettuare ricerca degli utenti con la skill *java*.
 
 Esempio di risultato:
 ```json
@@ -121,24 +121,32 @@ Tramite questa rotta andiamo a generare i seguenti filtri attraverso le seguenti
 ```
 
 # Eccezioni
+Il programma riesce all'occorrenza, a lanciare eccezioni personalizzate:
+* **MyFileNotFoundException** Eccezione nel caso in cui il file non venisse trovato e/o il percorso del file fosse sbagliato<br>
+```java
+"ERRORE: non è stato possibile trovare il file!"
+``` 
+* **StatsException** Eccezione nel caso in cui un calcolo nelle statistiche fosse impossibile da fare (es: divisione per 0)<br>
+```java
+"ERRORE: "
+```
 
 # JUNIT
-Nella sezione "test" del progetto abbiamo implementato:
-* Test per verificare la correttezza dei metodi inerenti alla classe Stats.java
-* Test per verificare la correttezza dei metodi inerenti alla classe Filters.java
+Nella sezione *test* del progetto abbiamo implementato:
+* **TestStats** Test per verificare la correttezza dei metodi inerenti alla classe Stats.java
+* **TestFilters** Test per verificare la correttezza dei metodi inerenti alla classe Filters.java
+* **TestFreelancersParser** Test per verificare la correttezza del parsing dei dati
 
 # Javadoc
-Attraverso i commenti "Javadoc" che mette a disposizione Java stesso siamo riusciti a creare una documentazione dettagliata di tutte le classi e di diversi metodi, di seguito il link: [Javadoc del progetto](https://www.youtube.com/watch?v=dQw4w9WgXcQ)
+Attraverso i commenti speciali **Javadoc**, che mette a disposizione Java stesso siamo riusciti a creare una documentazione dettagliata di tutte le classi e di diversi metodi, di seguito il link: [Javadoc del progetto](https://www.youtube.com/watch?v=dQw4w9WgXcQ)
 
 # Software utilizzati
 * [Eclipse](https://www.eclipse.org/downloads/) - Ambiente di sviluppo (Giovanni Prati).
 * [Visual studio Code](https://code.visualstudio.com/Download) - Ambiente di sviluppo (Lorenzo Zulli).
 * [Maven](https://maven.apache.org/) - Gestione del progetto.
 * [Spring Boot](https://spring.io/projects/spring-boot) - Framework per lo sviluppo dell'applicazione Java.
-* [Postman](https://www.postman.com/) - Ambiente per effettuare richieste all'API.
 
 # Autori
-
 |Nome          |Links                                    |Contributo(%)|Focus su                          |
 |--------------|-----------------------------------------|-------------|----------------------------------|
 |Lorenzo Zulli |[Github](https://github.com/lorenzozulli)| 50%         |Fase di modellazione delle classi |
