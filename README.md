@@ -128,7 +128,7 @@ Il programma riesce all'occorrenza, a lanciare eccezioni personalizzate:
 ```
 * **BodyIsEmptyException** Eccezione nel caso in cui il Database è vuoto<br>
 ```java
-"ERRORE: Il file non contiene nulla!"
+"ERRORE: Il file non contiene un JSONArray!"
 ```
 
 # JUNIT
@@ -147,7 +147,7 @@ Attraverso i commenti speciali **Javadoc**, che mette a disposizione Java stesso
 * [Spring Boot](https://spring.io/projects/spring-boot) - Framework per lo sviluppo dell'applicazione Java.
 
 # Autori
-|Nome          |Links                                    |Contributo(%)|Focus su                         |
+|Nome          |Links                                    |Contributo(%)|Focus su                          |
 |--------------|-----------------------------------------|-------------|----------------------------------|
 |Lorenzo Zulli |[Github](https://github.com/lorenzozulli)|50%          |Fase di modellazione delle classi |
 |Giovanni Prati|[Github](https://github.com/jjohnnyUtah) |50%          |Fase di implementazione dei metodi|
