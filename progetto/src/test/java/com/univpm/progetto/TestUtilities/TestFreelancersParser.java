@@ -7,7 +7,6 @@ import com.univpm.progetto.Exceptions.MyFileNotFoundException;
 import com.univpm.progetto.Models.Freelancer;
 import com.univpm.progetto.Services.UpworkService;
 
-//import org.junit.gen5.api.AfterEach;
 import org.junit.jupiter.api.Test;
 
 import java.util.Vector;

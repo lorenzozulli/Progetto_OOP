@@ -15,7 +15,7 @@ public class Stats{
     /**
      * Metodo per ottenere la media di progetti nel portfolio
      * @return Media di <b>portfolio_items_count</b>
-     * @param users
+     * @param users gli utenti del quale facciamo i calcoli
      */
     public double portfolioAverage(Vector<Freelancer> users){
         double sumportfolioitems = 0;
@@ -26,7 +26,7 @@ public class Stats{
     /**
      * Metodo per ottenere la varianza di progetti nel portfolio 
      * @return Varianza di <b>portfolio_items_count</b>
-     * @param users
+     * @param users gli utenti del quale facciamo i calcoli
      */
     public double portfolioVariance(Vector<Freelancer> users){
         double k, g=0;
@@ -40,7 +40,7 @@ public class Stats{
     /**
      * Metodo per ottenere la media del numero di skill
      * @return Media del numero di <b>skills</b>
-     * @param users
+     * @param users gli utenti del quale facciamo i calcoli
      */
     public double skillAverage(Vector<Freelancer> users){
     	double sumskills = 0;
@@ -52,7 +52,7 @@ public class Stats{
     /**
      * Metodo per ottenere la varianza di numero di skill
      * @return Varianza del numero di <b>skills</b>
-     * @param users
+     * @param users gli utenti del quale facciamo i calcoli
      */
     public double skillVariance(Vector<Freelancer> users){
         double k=0, g=0;

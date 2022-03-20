@@ -22,10 +22,8 @@ import com.univpm.progetto.Models.Freelancer;
 public class FreelancersParser {
     /**
      * Metodo per effettuare il parsing dei Freelancers
-     * 
-     * @param responsebody
      * @return f
-     * @throws MyFileNotFoundException
+     * @throws MyFileNotFoundException Eccezione di tipo MyFileNotFound
      */
     public Vector<Freelancer> parser() throws MyFileNotFoundException{
         JSONParser parser = new JSONParser();

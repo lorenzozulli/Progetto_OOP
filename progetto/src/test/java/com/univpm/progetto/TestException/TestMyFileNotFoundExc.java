@@ -12,6 +12,11 @@ import org.junit.jupiter.api.Test;
 import com.univpm.progetto.Exceptions.MyFileNotFoundException;
 import com.univpm.progetto.Models.Freelancer;
 import com.univpm.progetto.Utilities.FreelancersParser;
+/**
+ * Classe che testa l'eccezione MyFileNotFound
+ * @author Lorenzo Zulli
+ * @author Giovanni Prati
+ */
 
 public class TestMyFileNotFoundExc {
 	MyFileNotFoundException e;

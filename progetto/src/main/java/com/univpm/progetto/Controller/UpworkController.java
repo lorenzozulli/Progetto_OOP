@@ -22,9 +22,7 @@ public class UpworkController{
     UpworkService upworkservice = new UpworkService();
     /**
      * Rotta per iniziare la ricerca degli utenti con la skill java
-     * @param body
      * @return JSONArray contenente gli utenti con la skill java
-     * @throws BadRequestException
      * @throws MyFileNotFoundException
      */
     @GetMapping(value = "/search")
@@ -33,10 +31,8 @@ public class UpworkController{
     }
     /**
      * Rotta per generare le statistiche
-     * @param body
      * @return JSONObject contenente le statistiche
-     * @throws StatsException
-     * @throws MyFileNotFoundException
+     * @throws MyFileNotFoundException Eccezione di tipo MyFileNotFound
      */
     @GetMapping(value = "/stats")
     public JSONObject stats() throws MyFileNotFoundException{
@@ -47,10 +43,8 @@ public class UpworkController{
     }
    /**
     * Rotta per generare il filtro per feedback
-    * @param body
     * @return JSONArray ordinato per <b>feedback</b>
-    * @throws FiltersException
- * @throws MyFileNotFoundException
+    * @throws MyFileNotFoundException Eccezione di tipo MyFileNotFound
     */
     @GetMapping(value = "/filters/feedback")
     public JSONArray feedbackFilter() throws MyFileNotFoundException{
@@ -61,10 +55,8 @@ public class UpworkController{
     }
     /**
      * Rotta per generare il filtro per dimensione del portfolio
-     * @param body
      * @return JSONArray ordinato per <b>portfolio_items_count</b>
-     * @throws FiltersException
-     * @throws MyFileNotFoundException
+     * @throws MyFileNotFoundException Eccezione di tipo MyFileNotFound
      */
     @GetMapping(value = "/filters/portfolio")
     public JSONArray portfolioFilter() throws MyFileNotFoundException{

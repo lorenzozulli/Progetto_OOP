@@ -21,9 +21,7 @@ public class UpworkService {
     /**
      * Metodo per avviare una ricerca
      * @return search
-     * @throws BadRequestException
      * @throws MyFileNotFoundException
-     * @throws EmptyBodyException 
      */
     @SuppressWarnings("unchecked")
 	public JSONArray searchJava() throws MyFileNotFoundException{
@@ -39,6 +37,7 @@ public class UpworkService {
     /**
      * Metodo per generare le statistiche attraverso un <b>JSONObject</b>
      * @return stats
+     * @param f vettore di freelancers
      */
     @SuppressWarnings("unchecked")
 	public JSONObject statsGenerator(Vector<Freelancer> f) {
@@ -54,6 +53,7 @@ public class UpworkService {
     /**
      * Metodo per generare il filtro per <b>feedback</b>
      * @return filters
+     * @param f vettore di freelancers
      */
     @SuppressWarnings("unchecked")
 	public JSONArray feedbackFilterGenerator(Vector<Freelancer> f){
@@ -68,6 +68,7 @@ public class UpworkService {
     /**
      * Metodo per generare il filtro per <b>portfolio_items_count</b>
      * @return filters
+     * @param f vettore di freelancers
      */
     @SuppressWarnings("unchecked")
 	public JSONArray portfolioFilterGenerator(Vector<Freelancer> f){

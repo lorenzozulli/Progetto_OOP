@@ -1,6 +1,0 @@
-- [X] Vettore di Freelancers per le varie operazioni
-- [ ] Collegamento del tutto
-- [X] Sistemare il codice, pulirlo
-- [X] Aggiungere eccezioni
-- [ ] Javadoc
-- [ ] Aggiornare link README.md

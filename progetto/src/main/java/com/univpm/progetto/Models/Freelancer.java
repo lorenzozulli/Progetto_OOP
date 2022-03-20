@@ -1,7 +1,5 @@
 package com.univpm.progetto.Models;
 
-import java.util.Vector;
-
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 
@@ -38,7 +36,7 @@ public class Freelancer {
      * @param member_since Data di iscrizione ad Upwork (ISO 8601)
      * @param name Il suo nome
      * @param portfolio_items_count Numero di oggetti nel portfolio
-     * @param portrait_50
+     * @param portrait_50 Portrait_50
      * @param profile_type Indica il tipo di profilo (Agency, Independent)
      * @param rate Numero usato per filtrare le ricerche dal profilo (//da chiarire un attimo)
      * @param skills Elenco delle skills (JSON array)
@@ -75,7 +73,7 @@ public class Freelancer {
         
     /** 
      * Metodo di supporto per "swap"
-     * @param daCopiare
+     * @param daCopiare Contenente il freelancer da copiare
      */
     public void copia(Freelancer daCopiare) {
     	this.categories2 = daCopiare.getCategories2();
@@ -105,7 +103,7 @@ public class Freelancer {
 
     /**
      * Setter per categories2
-     * @param categories2
+     * @param categories2 Parametro Setter
      */
     public void setCategories2(String[] categories2) {
         this.categories2 = categories2;
@@ -121,7 +119,7 @@ public class Freelancer {
 
     /**
      * Setter per country
-     * @param country 
+     * @param country Parametro Setter
      */
     public void setCountry(String country) {
         this.country = country;
@@ -137,7 +135,7 @@ public class Freelancer {
 
     /**
      * Setter per description
-     * @param description 
+     * @param description Parametro Setter
      */
     public void setDescription(String description) {
         this.description = description;
@@ -153,7 +151,7 @@ public class Freelancer {
 
     /**
      * Setter per feedback
-     * @param feedback 
+     * @param feedback Parametro Setter
      */
     public void setFeedback(double feedback) {
         this.feedback = feedback;
@@ -169,7 +167,7 @@ public class Freelancer {
 
     /**
      * Setter per id
-     * @param id 
+     * @param id Parametro Setter
      */
     public void setId(String id) {
         this.id = id;
@@ -185,7 +183,7 @@ public class Freelancer {
 
     /**
      * Setter per last_activity
-     * @param last_activity
+     * @param last_activity Parametro Setter
      */
     public void setLast_activity(String last_activity) {
         this.last_activity = last_activity;
@@ -201,7 +199,7 @@ public class Freelancer {
 
     /**
      * Setter per member_since
-     * @param member_since 
+     * @param member_since Parametro Setter
      */
     public void setMember_since(String member_since) {
         this.member_since = member_since;
@@ -217,7 +215,7 @@ public class Freelancer {
 
     /**
      * Setter per name
-     * @param name 
+     * @param name Parametro Setter
      */
     public void setName(String name) {
         this.name = name;
@@ -233,7 +231,7 @@ public class Freelancer {
 
     /**
      * Setter per portfolio_items_count
-     * @param portfolio_items_count
+     * @param portfolio_items_count Parametro Setter
      */
     public void setPortfolio_items_count(int portfolio_items_count) {
         this.portfolio_items_count = portfolio_items_count;
@@ -249,7 +247,7 @@ public class Freelancer {
 
     /**
      * Setter per portrait_50
-     * @param portrait_50
+     * @param portrait_50 Parametro Setter
      */
     public void setPortrait_50(String portrait_50) {
         this.portrait_50 = portrait_50;
@@ -265,7 +263,7 @@ public class Freelancer {
 
     /**
      * Setter per profile_type
-     * @param profile_type
+     * @param profile_type Parametro Setter
      */
     public void setProfile_type(String profile_type) {
         this.profile_type = profile_type;
@@ -281,7 +279,7 @@ public class Freelancer {
 
     /**
      * Setter per rate
-     * @param rate
+     * @param rate Parametro Setter
      */
     public void setRate(float rate) {
         this.rate = rate;
@@ -297,7 +295,7 @@ public class Freelancer {
 
     /**
      * Setter per skills
-     * @param skills
+     * @param skills Parametro Setter
      */
     public void setSkills(String[] skills) {
         this.skills = skills;
@@ -313,7 +311,7 @@ public class Freelancer {
 
     /**
      * Setter per test_passed_count
-     * @param test_passed_count 
+     * @param test_passed_count Parametro Setter
      */
     public void setTest_passed_count(int test_passed_count) {
         this.test_passed_count = test_passed_count;
@@ -329,7 +327,7 @@ public class Freelancer {
 
     /**
      * Setter per title
-     * @param title 
+     * @param title Parametro Setter
      */
     public void setTitle(String title) {
         this.title = title;
@@ -367,24 +365,4 @@ public class Freelancer {
         object.put("title", this.title);
         return object;
     }
-
-    private Vector<Freelancer> freelancers = new Vector<Freelancer>();
-
-
-    /**
-     * Getter per Freelancers
-     * @return freelancers
-     */
-    public Vector<Freelancer> getFreelancers() {
-        return freelancers;
-    }
-
-    /**
-     * Setter per Freelancers
-     * @param freelancers 
-     */
-    public void setFreelancers(Vector<Freelancer> freelancers) {
-        this.freelancers = freelancers;
-    }
-
 }

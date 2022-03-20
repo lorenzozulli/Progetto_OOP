@@ -12,7 +12,9 @@ import java.util.Vector;
 public class Filters {
     /**
 	 * Quicksort per ordinare i freelancers in base al <b>feedback</b>, in ordine crescente
-	 * @param users
+	 * @param users gli utenti da ordinare
+	 * @param lowIndex indice basso per quicksort
+	 * @param highIndex indice alto per quicksort
 	 */
 	public void ordinoPerFeedback(Vector<Freelancer> users,int lowIndex,int highIndex) {
 		if (lowIndex >= highIndex) return; //se abbiamo a che fare con un vettore unitario o abbiamo terminato
@@ -27,16 +29,16 @@ public class Filters {
     }
 	/**
 	 * Metodo di supporto a <b>ordinoPerFeedback</b>
-	 * @param users
+	 * @param users gli utenti da ordinare
 	 */
 	public void ordinoPerFeedback(Vector<Freelancer> users) {
 		ordinoPerFeedback(users,0,users.size()-1);
 	}
 	/**
 	 * Quicksort per ordinare i freelancers in base al <b>portfolio_items_count</b>, in ordine crescente
-	 * @param users
-	 * @param lowIndex
-	 * @param highIndex
+	 * @param users gli utenti da ordinare
+	 * @param lowIndex indice basso per quicksort
+	 * @param highIndex indice alto per quicksort
 	 */
 	public void ordinoPerDimensionePortfolio(Vector<Freelancer> users,int lowIndex,int highIndex) {
 		if (lowIndex >= highIndex) return; //se abbiamo a che fare con un vettore unitario o abbiamo terminato
@@ -52,17 +54,18 @@ public class Filters {
 	
 	/**
 	 * Metodo di supporto a <b>ordinoPerDimensionePortfolio</b>
-	 * @param users
+	 * @param users gli utenti da ordinare
 	 */
 	public void ordinoPerDimensionePortfolio(Vector<Freelancer> users) {
 		ordinoPerDimensionePortfolio(users,0,users.size()-1);
 	}
 	/**
 	 * Metodo di supporto a <b>ordinoPerFeedback</b> per effettuare il partizionamento
-	 * @param users
-	 * @param lowIndex
-	 * @param highIndex
-	 * @param pivotValue
+	 * @param users gli utenti da ordinare
+	 * @param lowIndex indice basso per quicksort
+	 * @param highIndex indice alto per quicksort
+	 * @param pivotValue valore del pivot
+	 * @return leftPointer
 	 */
 	public int partizionamentoPerFeedback(Vector<Freelancer> users,int lowIndex,int highIndex,double pivotValue) {
         int leftPointer = lowIndex;
@@ -91,10 +94,11 @@ public class Filters {
     }
 	/**
 	 * Metodo di supporto a <b>ordinoPerDimensionePortfolio</b> per effettuare il partizionamento
-	 * @param users
-	 * @param lowIndex
-	 * @param highIndex
-	 * @param pivotValue
+	 * @param users gli utenti da ordinare
+	 * @param lowIndex indice basso per quicksort
+	 * @param highIndex indice alto per quicksort
+	 * @param pivotValue valore del pivot
+	 * @return leftPointer
 	 */
 	public int partizionamentoPerDimensionePortfolio(Vector<Freelancer> users,int lowIndex,int highIndex,int pivotValue) {
         int leftPointer = lowIndex;
@@ -123,9 +127,9 @@ public class Filters {
     }
 	/**
 	 * Metodo di supporto per scambiare due Freelancers
-	 * @param users
-	 * @param index1
-	 * @param index2
+	 * @param users gli utenti da ordinare
+	 * @param index1 indice utente 1
+	 * @param index2 indice utente 2
 	 */	
 	public void swap(Vector<Freelancer> users, int index1, int index2) {
 		Freelancer temp = new Freelancer();

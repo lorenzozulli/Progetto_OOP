@@ -10,7 +10,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
 public class ProgettoApplication {
-
+	/**
+	 * Metodo main
+	 * @param args args
+ 	*/
 	public static void main(String[] args) {
 		SpringApplication.run(ProgettoApplication.class, args);
 	}
