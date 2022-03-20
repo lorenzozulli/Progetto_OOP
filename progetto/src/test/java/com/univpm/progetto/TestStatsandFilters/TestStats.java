@@ -1,9 +1,11 @@
 package com.univpm.progetto.TestStatsandFilters;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNull;
+
 import java.util.Vector;
 
-import org.junit.gen5.api.AfterEach;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
 
 import com.univpm.progetto.Models.Freelancer;

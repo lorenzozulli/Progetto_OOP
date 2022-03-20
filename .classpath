@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="progetto/src/main/java"/>
+	<classpathentry kind="src" path="progetto/src/test/java"/>
+	<classpathentry kind="lib" path="progetto/.mvn/wrapper/maven-wrapper.jar"/>
+	<classpathentry kind="lib" path="progetto/bin/.mvn/wrapper/maven-wrapper.jar"/>
+	<classpathentry kind="lib" path="progetto/json-simple-1.1.1.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/5"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

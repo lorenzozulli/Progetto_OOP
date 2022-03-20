@@ -43,7 +43,7 @@ public class Stats{
      * @param users
      */
     public double skillAverage(Vector<Freelancer> users){
-        double sumskills = 0;
+    	double sumskills = 0;
         for (Freelancer s : users){
             sumskills += s.getSkills().length;
         }
