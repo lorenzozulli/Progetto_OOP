@@ -10,6 +10,11 @@ import org.junit.jupiter.api.Test;
 
 import com.univpm.progetto.Models.Freelancer;
 import com.univpm.progetto.StatsandFilters.Stats;
+/**
+ * Classe di test per i metodi delle stats
+ * @author Lorenzo Zulli
+ * @author Giovanni Prati
+ */
 
 class TestStats {
 	Stats test = new Stats();

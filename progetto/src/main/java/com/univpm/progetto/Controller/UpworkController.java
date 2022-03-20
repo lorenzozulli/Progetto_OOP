@@ -1,9 +1,6 @@
 package com.univpm.progetto.Controller;
 
-import com.univpm.progetto.Exceptions.BadRequestException;
-import com.univpm.progetto.Exceptions.FiltersException;
 import com.univpm.progetto.Exceptions.MyFileNotFoundException;
-import com.univpm.progetto.Exceptions.StatsException;
 import com.univpm.progetto.Models.Freelancer;
 import com.univpm.progetto.Services.UpworkService;
 import com.univpm.progetto.Utilities.FreelancersParser;
@@ -31,7 +28,7 @@ public class UpworkController{
      * @throws MyFileNotFoundException
      */
     @GetMapping(value = "/search")
-    public JSONArray startSearch() throws BadRequestException, MyFileNotFoundException{
+    public JSONArray startSearch() throws MyFileNotFoundException{
             return upworkservice.searchJava();
     }
     /**
@@ -42,7 +39,7 @@ public class UpworkController{
      * @throws MyFileNotFoundException
      */
     @GetMapping(value = "/stats")
-    public JSONObject stats() throws StatsException, MyFileNotFoundException{
+    public JSONObject stats() throws MyFileNotFoundException{
         Vector<Freelancer> f = new Vector<Freelancer>();
         FreelancersParser fParser = new FreelancersParser();
         f = fParser.parser();
@@ -56,7 +53,7 @@ public class UpworkController{
  * @throws MyFileNotFoundException
     */
     @GetMapping(value = "/filters/feedback")
-    public JSONArray feedbackFilter() throws FiltersException, MyFileNotFoundException{
+    public JSONArray feedbackFilter() throws MyFileNotFoundException{
         Vector<Freelancer> f = new Vector<Freelancer>();
         FreelancersParser fParser = new FreelancersParser();
         f = fParser.parser();
@@ -70,7 +67,7 @@ public class UpworkController{
      * @throws MyFileNotFoundException
      */
     @GetMapping(value = "/filters/portfolio")
-    public JSONArray portfolioFilter() throws FiltersException, MyFileNotFoundException{
+    public JSONArray portfolioFilter() throws MyFileNotFoundException{
         Vector<Freelancer> f = new Vector<Freelancer>();
         FreelancersParser fParser = new FreelancersParser();
         f = fParser.parser();

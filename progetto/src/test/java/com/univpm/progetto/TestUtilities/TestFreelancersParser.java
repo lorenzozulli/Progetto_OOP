@@ -11,6 +11,11 @@ import com.univpm.progetto.Services.UpworkService;
 import org.junit.jupiter.api.Test;
 
 import java.util.Vector;
+/**
+ * Classe di test per il parsing dei freelancers
+ * @author Lorenzo Zulli
+ * @author Giovanni Prati
+ */
 
 class TestFreelancersParser {
     FreelancersParser test = new FreelancersParser();

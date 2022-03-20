@@ -10,6 +10,11 @@ import org.junit.jupiter.api.Test;
 
 import com.univpm.progetto.Models.Freelancer;
 import com.univpm.progetto.StatsandFilters.Filters;
+/**
+ * Classe di test per i filtri
+ * @author Lorenzo Zulli
+ * @author Giovanni Prati
+ */
 
 public class TestFilters {
 	Filters test = new Filters();

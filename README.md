@@ -124,11 +124,7 @@ Tramite questa rotta andiamo a generare i seguenti filtri attraverso le seguenti
 Il programma riesce all'occorrenza, a lanciare eccezioni personalizzate:
 * **MyFileNotFoundException** Eccezione nel caso in cui il file non venisse trovato e/o il percorso del file fosse sbagliato<br>
 ```java
-"ERRORE: non e' stato possibile trovare il file!"
-```
-* **BodyIsEmptyException** Eccezione nel caso in cui il Database è vuoto<br>
-```java
-"ERRORE: Il file non contiene un JSONArray!"
+"ERRORE: non è stato possibile trovare il file!"
 ```
 
 # JUNIT

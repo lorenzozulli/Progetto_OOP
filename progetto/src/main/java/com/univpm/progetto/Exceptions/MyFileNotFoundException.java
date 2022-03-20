@@ -6,7 +6,7 @@ package com.univpm.progetto.Exceptions;
  */
 
 public class MyFileNotFoundException extends Exception {
-	public static String output= "ERRORE: non e' stato possibile trovare il file!";
+	public static String output= "ERRORE: non è stato possibile trovare il file!";
 
 	/**
 	 * 
