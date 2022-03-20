@@ -132,12 +132,14 @@ Il programma riesce all'occorrenza, a lanciare eccezioni personalizzate:
 ```java
 "ERRORE: non è stato possibile trovare il file!"
 ```
+Inoltre abbiamo usato anche eccezioni standard fornite da Java.
 
 # JUNIT
 Nella sezione *test* del progetto abbiamo implementato:
 * **TestStats:** Per verificare la correttezza dei metodi inerenti alla classe Stats.java
 * **TestFilters:** Per verificare la correttezza dei metodi inerenti alla classe Filters.java
 * **TestFreelancersParser:** Per verificare la correttezza del parsing dei dati
+* **TestMyFileNotFoundException:** Per verificare la correttezza dell'eccezione MyFileNotFoundException
 
 # Javadoc
 Attraverso i commenti speciali **Javadoc**, che mette a disposizione Java stesso siamo riusciti a creare una documentazione dettagliata di tutte le classi e di diversi metodi (si trova nella cartella **doc** del progetto).

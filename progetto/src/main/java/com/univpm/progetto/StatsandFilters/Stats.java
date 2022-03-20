@@ -31,7 +31,6 @@ public class Stats{
     public double portfolioVariance(Vector<Freelancer> users){
         double k, g=0;
         for (Freelancer s : users) {
-            // calcolo della varianza
             k = s.getPortfolio_items_count() - portfolioAverage(users);
             g += k*k;
         }
@@ -56,11 +55,7 @@ public class Stats{
      */
     public double skillVariance(Vector<Freelancer> users){
         double k=0, g=0;
-        //sumskills = 0;
         for (Freelancer s : users) {
-            // per prendere il numero di skills
-            // sumskills += s.getSkills().length;
-            // calcolo della varianza
             k = s.getSkills().length - skillAverage(users);
             g += k*k;
         }

@@ -15,7 +15,7 @@ import com.univpm.progetto.Exceptions.MyFileNotFoundException;
 import com.univpm.progetto.Models.Freelancer;
 
 /**
- * Classe che effettua la richiesta HTTP(nel nostro caso simulata attraverso il file JSON) e fa il parsing
+ * Classe che effettua la richiesta HTTP (nel nostro caso simulata attraverso il file JSON) e fa il parsing
  * @author Lorenzo Zulli
  * @author Giovanni Prati
  */
@@ -61,8 +61,8 @@ public class FreelancersParser {
                 String description = (String) freelancer.get("description");
                 double feedback = Double.parseDouble((String) freelancer.get("feedback"));
                 String id = (String) freelancer.get("id");
-                String last_activity = (String) freelancer.get("last_activity"); //String visto che tanto non dobbiamo farci operazioni
-                String member_since = (String) freelancer.get("member_since"); //String visto che tanto non dobbiamo farci operazioni
+                String last_activity = (String) freelancer.get("last_activity");
+                String member_since = (String) freelancer.get("member_since");
                 String name = (String) freelancer.get("name");
                 int portfolio_items_count = Integer.parseInt((String) freelancer.get("portfolio_items_count"));
                 String portrait_50 = (String)freelancer.get("portrait_50");
